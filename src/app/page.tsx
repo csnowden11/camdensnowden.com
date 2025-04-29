@@ -290,9 +290,9 @@ export default function Home() {
           <h2>Personal Blog</h2>
           <div className="row">
             <div className="col-4 post-card">
-              <h3>Lessons I Want to Teach My Kids</h3>
-              <p>Twelve core life lessons for future happiness and success. A collection of personal stories, research, and real-world wisdom to help guide the next generation.</p>
-              <a href="https://lessons-i-want-to-teach--e3ko3ra.gamma.site/" className="btn" target="_blank" rel="noopener noreferrer">Read Article</a>
+              <h3>Life Lessons for My Sons</h3>
+              <p>Wisdom and guidance for Charlie and Everett's journey through life.</p>
+              <a href="/pdfs/Life-Lessons-for-My-Sons-What-I-Hope-Charlie-and-Everett-Will-Always-Remember.pdf" className="btn" target="_blank" rel="noopener noreferrer">Read PDF</a>
             </div>
           </div>
         </div>
