@@ -795,56 +795,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // ... existing DOMContentLoaded code ...
 });
 
-// Loading State Handler
+// Hide loading screen immediately when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     const loadingContainer = document.querySelector('.loading-container');
-    const mainContent = document.querySelector('main');
-    
-    // Hide loading screen when page is ready
-    window.addEventListener('load', () => {
+    if (loadingContainer) {
         loadingContainer.classList.add('hidden');
-    });
-});
-
-// Fade-in Animation Handler
-function initializeAnimations() {
-    const fadeElements = document.querySelectorAll('section');
-    fadeElements.forEach(element => {
-        element.classList.add('fade-in');
-    });
-
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Stop observing once visible
-            }
-        });
-    }, observerOptions);
-
-    fadeElements.forEach(element => {
-        observer.observe(element);
-    });
-}
-
-// Wait for the page to load
-document.addEventListener('DOMContentLoaded', () => {
-    // Handle loading container
-    const loadingContainer = document.querySelector('.loading-container');
-    
-    // Hide loading container when page is loaded
-    window.addEventListener('load', () => {
-        loadingContainer.classList.add('hidden');
-        setTimeout(() => {
-            loadingContainer.style.display = 'none';
-        }, 500);
-    });
+    }
 
     // Mobile menu functionality
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -888,12 +844,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Intersection Observer for animations
+    // Simple fade-in animation
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
             }
         });
     }, {
@@ -902,9 +857,10 @@ document.addEventListener('DOMContentLoaded', () => {
         threshold: 0.1
     });
 
-    // Observe all animated elements
-    document.querySelectorAll('.fade-in, section').forEach(element => {
-        observer.observe(element);
+    // Observe all sections for fade-in
+    document.querySelectorAll('section').forEach(section => {
+        section.classList.add('fade-in');
+        observer.observe(section);
     });
 
     // Theme toggle
@@ -929,13 +885,4 @@ document.addEventListener('DOMContentLoaded', () => {
             applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
         });
     }
-
-    // Handle image loading
-    document.querySelectorAll('img').forEach(img => {
-        img.addEventListener('load', () => img.classList.add('loaded'));
-        img.addEventListener('error', () => {
-            img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"%3E%3C/svg%3E';
-            img.classList.add('error');
-        });
-    });
 }); 
