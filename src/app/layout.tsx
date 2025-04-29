@@ -1,13 +1,19 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://camdensnowden.com"),
   title: "Camden Snowden – Official Site",
   description: "West Point-bred Intelligence Officer & Berkeley Haas MBA candidate leveraging strategic-intelligence expertise to create business impact.",
-  viewport: "width=device-width, initial-scale=1, viewport-fit=cover",
   openGraph: {
     title: "Camden Snowden – From the Long Gray Line to the Bottom Line",
     type: "website",

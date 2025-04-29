@@ -11,10 +11,10 @@ export default function Home() {
     // Initialize carousel
     const initCarousel = () => {
       const root = carouselRef.current;
-      if (!root) return;
+      if (!root) return undefined;
 
       const imgs = Array.from(root.querySelectorAll<HTMLImageElement>('.hero-image')).filter(Boolean);
-      if (imgs.length === 0) return;
+      if (imgs.length === 0) return undefined;
 
       let idx = 0;
 
@@ -86,7 +86,9 @@ export default function Home() {
     document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
 
     const cleanup = initCarousel();
-    return () => cleanup();
+    return () => {
+      if (cleanup) cleanup();
+    };
   }, []);
 
   return (
