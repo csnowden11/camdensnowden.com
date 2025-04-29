@@ -293,9 +293,19 @@ section {
 
 .post-card a {
   margin-top: auto;
-  color: var(--accent);
+  color: #fff;
   font-weight: 600;
   text-decoration: none;
+  background: var(--accent);
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.post-card a:hover {
+  background: #0056b3;
+  color: #fff;
 }
 
 /* Contact Form */
