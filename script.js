@@ -438,60 +438,6 @@ function previousTestimonial() {
 // Auto advance testimonials
 setInterval(nextTestimonial, 5000);
 
-// Language Selector
-const languageToggle = document.querySelector('.language-toggle');
-const languageDropdown = document.querySelector('.language-dropdown');
-
-languageToggle?.addEventListener('click', () => {
-    languageDropdown.classList.toggle('active');
-});
-
-document.addEventListener('click', (e) => {
-    if (!e.target.closest('.language-selector')) {
-        languageDropdown?.classList.remove('active');
-    }
-});
-
-// Social Share
-const shareToggle = document.querySelector('.share-toggle');
-const shareDropdown = document.querySelector('.share-dropdown');
-
-shareToggle?.addEventListener('click', () => {
-    shareDropdown.classList.toggle('active');
-});
-
-document.addEventListener('click', (e) => {
-    if (!e.target.closest('.social-share')) {
-        shareDropdown?.classList.remove('active');
-    }
-});
-
-async function shareContent(platform) {
-    const url = window.location.href;
-    const title = document.title;
-    const text = "Check out Camden Snowden's portfolio!";
-
-    switch (platform) {
-        case 'twitter':
-            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`);
-            break;
-        case 'linkedin':
-            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`);
-            break;
-        case 'facebook':
-            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`);
-            break;
-        case 'copy':
-            try {
-                await navigator.clipboard.writeText(url);
-                alert('Link copied to clipboard!');
-            } catch (err) {
-                console.error('Failed to copy link:', err);
-            }
-            break;
-    }
-}
-
 // Search Functionality
 const searchTrigger = document.querySelector('.search-trigger');
 const searchOverlay = document.querySelector('.search-overlay');
