@@ -183,8 +183,8 @@ export default function Home() {
           />
         </div>
         <div className="overlay">
-          <h1>From the Long Gray Line to the Bottom Line</h1>
-          <h2>Decorated Army Officer Turning Business Leader</h2>
+          <h1 className="hero-title">From the Long Gray Line to the Bottom Line</h1>
+          <h2 className="hero-subtitle">Decorated Army Officer Turning Business Leader</h2>
         </div>
       </section>
 
