@@ -11,7 +11,9 @@
   "dependencies": {
     "http-server": "^14.1.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@netlify/plugin-image-optim": "^1.0.0"
+  },
   "engines": {
     "node": "18.x",
     "npm": "9.x"
