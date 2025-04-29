@@ -31,6 +31,8 @@ body {
     min-height: 100vh;
     transition: background-color var(--transition-speed) ease,
                 color var(--transition-speed) ease;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 img {
@@ -163,13 +165,12 @@ section {
     z-index: 9999;
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.3s ease-out, visibility 0s linear;
+    transition: opacity 0.3s ease-out;
 }
 
 .loading-container.hidden {
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease-out, visibility 0s linear 0.3s;
 }
 
 .loading-spinner {
@@ -255,4 +256,9 @@ section {
     .mobile-menu-btn {
         display: none;
     }
+}
+
+main {
+    opacity: 1 !important;
+    visibility: visible !important;
 } 

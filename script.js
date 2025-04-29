@@ -795,27 +795,38 @@ document.addEventListener('DOMContentLoaded', () => {
     // ... existing DOMContentLoaded code ...
 });
 
-// Hide loading screen immediately when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
+// Ensure loading screen is removed
+function hideLoadingScreen() {
     const loadingContainer = document.querySelector('.loading-container');
     if (loadingContainer) {
         loadingContainer.classList.add('hidden');
+        // Force remove after transition
+        setTimeout(() => {
+            loadingContainer.style.display = 'none';
+        }, 300);
     }
+}
 
-    // Mobile menu functionality
+// Try to hide loading screen as early as possible
+document.addEventListener('DOMContentLoaded', hideLoadingScreen);
+window.addEventListener('load', hideLoadingScreen);
+
+// Backup timeout in case other events don't fire
+setTimeout(hideLoadingScreen, 2000);
+
+// Mobile menu functionality
+document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mobileMenu = document.querySelector('.mobile-menu');
     const body = document.body;
 
     if (mobileMenuBtn && mobileMenu) {
-        // Toggle menu
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenuBtn.classList.toggle('active');
             mobileMenu.classList.toggle('active');
             body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
         });
 
-        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (mobileMenu.classList.contains('active') && 
                 !mobileMenu.contains(e.target) && 
@@ -827,59 +838,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', (e) => {
-            e.preventDefault();
-            const target = document.querySelector(anchor.getAttribute('href'));
-            if (target) {
-                const headerOffset = 60;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // Simple fade-in animation
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    });
-
-    // Observe all sections for fade-in
-    document.querySelectorAll('section').forEach(section => {
-        section.classList.add('fade-in');
-        observer.observe(section);
-    });
-
     // Theme toggle
     const themeToggle = document.querySelector('.theme-toggle');
     if (themeToggle) {
         const htmlElement = document.documentElement;
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
         
-        // Apply theme
         const applyTheme = (theme) => {
             htmlElement.setAttribute('data-theme', theme);
             localStorage.setItem('theme', theme);
         };
 
-        // Initialize theme
         const savedTheme = localStorage.getItem('theme') || (prefersDark.matches ? 'dark' : 'light');
         applyTheme(savedTheme);
 
-        // Theme toggle click handler
         themeToggle.addEventListener('click', () => {
             const currentTheme = htmlElement.getAttribute('data-theme');
             applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
