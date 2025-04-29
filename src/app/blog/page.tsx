@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Blog() {
   return (
-    <main className="blog-page">
+    <div className="blog-page">
       {/* Header */}
       <header>
         <nav aria-label="Main">
@@ -13,7 +13,7 @@ export default function Blog() {
       </header>
 
       {/* Blog Content */}
-      <section className="container fade-in">
+      <main className="container">
         <article className="blog-post">
           <h1>Life Lessons for My Sons: What I Hope Charlie and Everett Will Always Remember</h1>
           <p className="blog-meta">By Camden Snowden</p>
@@ -53,7 +53,7 @@ export default function Blog() {
             </div>
           </div>
         </article>
-      </section>
+      </main>
 
       {/* Footer */}
       <footer className="alt">
@@ -61,6 +61,6 @@ export default function Blog() {
           <p>© 2025 Camden Snowden. All rights reserved.</p>
         </div>
       </footer>
-    </main>
+    </div>
   );
 } 
