@@ -1,6 +1,25 @@
 # Camden Snowden - Personal Website
 
-Personal website showcasing my professional experience, education, and background. Built with HTML, CSS, and JavaScript.
+This is my personal website showcasing my journey from West Point to Berkeley Haas, and my experience as an Army Officer.
+
+## Features
+- Responsive design
+- Modern animations
+- Mobile-friendly navigation
+- Professional portfolio layout
+
+## Technologies Used
+- HTML5
+- CSS3
+- JavaScript
+- Font Awesome for icons
+
+## Setup
+1. Clone the repository
+2. Open index.html in your browser
+
+## Contact
+Connect with me on [LinkedIn](https://www.linkedin.com/in/camden-snowden/)
 
 ## Development
 

@@ -3,210 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camden Snowden - Army Officer | MBA Candidate</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description" content="Camden Snowden - Army Officer & Future Berkeley Haas MBA Candidate">
+    <title>Camden Snowden - Army Officer | Berkeley Haas MBA</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-content">
-            <div class="logo">Camden Snowden</div>
-            <button class="mobile-menu-btn">
+        <div class="navbar-content">
+            <a href="#" class="logo">CS</a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
-            <ul class="nav-links">
-                <li><a href="#work">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+            </div>
         </div>
     </nav>
 
-    <header class="hero">
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
         <div class="hero-content">
-            <div class="profile-image">
-                <img src="images/camden-snowden.jpg" alt="Camden Snowden" class="headshot">
-            </div>
-            <h1>Camden Snowden</h1>
-            <h2 class="subtitle">Army Officer & Future MBA Candidate at UC Berkeley Haas</h2>
-            <p class="hero-text">Leading teams, driving innovation, and creating impact through strategic leadership</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="cta-primary">Get in Touch</a>
-                <a href="#work" class="cta-secondary">View Experience</a>
+            <img src="profile.jpg" alt="Camden Snowden" class="profile-image animate-on-scroll">
+            <h1 class="animate-on-scroll">Camden Snowden</h1>
+            <p class="subtitle animate-on-scroll">Army Officer & Future Berkeley Haas MBA Candidate</p>
+            <p class="motivational-quote animate-on-scroll">Hard Work Beats Talent</p>
+            <div class="cta-buttons animate-on-scroll">
+                <a href="#experience" class="button button-primary">View Experience</a>
+                <a href="#contact" class="button button-secondary">Get in Touch</a>
             </div>
         </div>
-    </header>
+    </section>
 
-    <section id="work" class="work-section">
-        <h2>Professional Experience</h2>
-        <div class="work-grid">
-            <div class="work-card">
-                <div class="work-card-header">
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="animate-on-scroll">About Me</h2>
+            <div class="about-content">
+                <div class="about-text animate-on-scroll">
+                    <p>As an Army Officer with a passion for leadership and innovation, I bring a unique perspective shaped by military service and academic excellence. My journey from West Point to Berkeley Haas represents my commitment to continuous growth and impactful leadership.</p>
+                    <p>I believe in the power of combining strategic thinking with decisive action, whether leading troops in the field or tackling complex business challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="animate-on-scroll">Education</h2>
+            <div class="grid">
+                <div class="education-card animate-on-scroll">
+                    <img src="berkeley-haas.jpg" alt="Berkeley Haas School of Business" class="education-image">
+                    <div class="education-content">
+                        <h3 class="education-title">UC Berkeley, Haas School of Business</h3>
+                        <p>MBA Candidate '27</p>
+                        <p>Focus: Innovation, Entrepreneurship, and Sustainable Business</p>
+                    </div>
+                </div>
+                <div class="education-card animate-on-scroll">
+                    <img src="westpoint.jpg" alt="United States Military Academy at West Point" class="education-image">
+                    <div class="education-content">
+                        <h3 class="education-title">United States Military Academy</h3>
+                        <p>Bachelor of Science in Economics '16</p>
+                        <p>Focus: Leadership Development, Strategic Management</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="animate-on-scroll">Military Experience</h2>
+            <div class="grid">
+                <div class="card animate-on-scroll">
                     <h3>Company Commander</h3>
-                    <p class="work-location">U.S. Army - Fort Huachuca, AZ</p>
-                    <p class="work-date">2022 - Present</p>
-                </div>
-                <div class="work-card-content">
+                    <p>U.S. Army - Fort Huachuca, AZ</p>
+                    <p>2022 - Present</p>
                     <ul>
-                        <li>Led two successful company commands, managing operations and training for large military units</li>
-                        <li>Developed and implemented strategic initiatives to improve unit performance and readiness</li>
-                        <li>Mentored and developed future leaders while maintaining high standards of excellence</li>
+                        <li>Led two successful company commands</li>
+                        <li>Managed operations and training for large military units</li>
+                        <li>Developed and implemented strategic initiatives</li>
                     </ul>
                 </div>
-            </div>
-            <div class="work-card">
-                <div class="work-card-header">
+                <div class="card animate-on-scroll">
                     <h3>Military Intelligence Officer</h3>
-                    <p class="work-location">U.S. Army - Camp Humphreys, South Korea</p>
-                    <p class="work-date">2020 - 2022</p>
-                </div>
-                <div class="work-card-content">
+                    <p>U.S. Army - Camp Humphreys, South Korea</p>
+                    <p>2020 - 2022</p>
                     <ul>
-                        <li>Led intelligence analysts in producing actionable intelligence for senior Army leaders</li>
-                        <li>Coordinated cross-functional teams to deliver time-sensitive intelligence products</li>
-                        <li>Managed complex data analysis and reporting systems</li>
+                        <li>Led intelligence analysts in producing actionable intelligence</li>
+                        <li>Coordinated cross-functional teams</li>
+                        <li>Managed complex data analysis systems</li>
                     </ul>
                 </div>
-            </div>
-            <div class="work-card">
-                <div class="work-card-header">
+                <div class="card animate-on-scroll">
                     <h3>Rifle and Scout Platoon Leader</h3>
-                    <p class="work-location">U.S. Army - Germany (2CR)</p>
-                    <p class="work-date">2016 - 2020</p>
-                </div>
-                <div class="work-card-content">
+                    <p>U.S. Army - Germany (2CR)</p>
+                    <p>2016 - 2020</p>
                     <ul>
-                        <li>Led diverse teams of Infantrymen, Cavalry Scouts, and Snipers across Europe</li>
-                        <li>Planned and executed complex military operations and training exercises</li>
-                        <li>Developed and implemented innovative training programs</li>
+                        <li>Led diverse teams across Europe</li>
+                        <li>Planned and executed complex military operations</li>
+                        <li>Developed innovative training programs</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="education" class="education-section">
-        <h2>Education</h2>
-        <div class="education-grid">
-            <div class="education-card">
-                <div class="education-icon">
-                    <i class="fas fa-graduation-cap"></i>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="animate-on-scroll">Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-text animate-on-scroll">
+                    <p>I'm always interested in connecting with fellow professionals and discussing opportunities in leadership and innovation.</p>
                 </div>
-                <h3>UC Berkeley, Haas School of Business</h3>
-                <p class="degree">MBA Candidate '27</p>
-                <p class="education-focus">Focus areas: Innovation, Entrepreneurship, and Sustainable Business</p>
-            </div>
-            <div class="education-card">
-                <div class="education-icon">
-                    <i class="fas fa-university"></i>
-                </div>
-                <h3>United States Military Academy at West Point</h3>
-                <p class="degree">Bachelor's in Economics '16</p>
-                <p class="education-focus">Leadership Development, Strategic Management, Economic Analysis</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="skills-section">
-        <h2>Skills & Expertise</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Leadership</h3>
-                <ul>
-                    <li>Strategic Planning</li>
-                    <li>Team Development</li>
-                    <li>Crisis Management</li>
-                    <li>Cross-functional Leadership</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>Operations</h3>
-                <ul>
-                    <li>Project Management</li>
-                    <li>Risk Assessment</li>
-                    <li>Process Improvement</li>
-                    <li>Resource Optimization</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>Analysis</h3>
-                <ul>
-                    <li>Data Analysis</li>
-                    <li>Strategic Analysis</li>
-                    <li>Performance Metrics</li>
-                    <li>Decision Making</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about-section">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>I joined the military to pursue education, travel the world, and serve my country - and I'm proud to say I've accomplished all three goals. With a degree from West Point, experience in over 25 countries, and leadership roles across diverse teams globally, I bring a unique perspective to every challenge.</p>
-                
-                <div class="interests-section">
-                    <h3>Current Interests</h3>
-                    <div class="reading-list">
-                        <h4>Currently Reading:</h4>
-                        <ul>
-                            <li>
-                                <span class="book-title">Pioneering Portfolio Management</span>
-                                <span class="book-author">by David Swenson</span>
-                            </li>
-                            <li>
-                                <span class="book-title">The Lean Startup</span>
-                                <span class="book-author">by Eric Ries</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="personal-interests">
-                        <h4>Beyond Work</h4>
-                        <p>When not working, you might find me exploring fire stations with my son Charlie, who's developed quite the enthusiasm for firefighting! This journey has given me a new perspective on community service and the joy of seeing the world through a child's eyes.</p>
-                    </div>
+                <div class="social-links animate-on-scroll">
+                    <a href="https://www.linkedin.com/in/camden-snowden/" target="_blank" class="button button-primary">
+                        <i class="fab fa-linkedin"></i>
+                        Connect on LinkedIn
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
-        <h2>Let's Connect</h2>
-        <div class="contact-content">
-            <p>I'm always interested in connecting with fellow professionals, discussing new opportunities, or sharing experiences about leadership and innovation.</p>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>Get in Touch</h3>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/camden-snowden/" target="_blank" class="social-link">
-                            <i class="fab fa-linkedin"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 Camden Snowden. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#work">Experience</a>
-                <a href="#education">Education</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Camden Snowden. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+    
+    <!-- Main JavaScript -->
     <script src="script.js"></script>
 </body>
 </html> 
