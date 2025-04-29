@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --txt: #000;
-  --bg: #fff;
+  --txt: #000000;
+  --bg: #ffffff;
   --sec: #F5F5F7;
   --accent: #0071E3;
   --radius: 8px;
@@ -697,31 +697,32 @@ footer p {
 /* Blog page mobile styles */
 @media (max-width: 768px) {
   .blog-content {
-    color: var(--txt);
+    color: #000000 !important;
     padding: 1rem;
+    background: #ffffff;
   }
 
   .blog-content h1 {
     font-size: 2rem;
-    color: var(--txt);
+    color: #000000 !important;
     margin-bottom: 1rem;
   }
 
   .blog-content h2 {
     font-size: 1.5rem;
-    color: var(--txt);
+    color: #000000 !important;
     margin: 1.5rem 0 1rem;
   }
 
   .blog-content h3 {
     font-size: 1.2rem;
-    color: var(--txt);
+    color: #000000 !important;
     margin: 1rem 0 0.5rem;
   }
 
   .blog-content p {
     font-size: 1rem;
-    color: var(--txt);
+    color: #000000 !important;
     line-height: 1.5;
     margin-bottom: 1rem;
   }
@@ -747,6 +748,14 @@ footer p {
   .post-card {
     padding: 1rem;
     margin: 0;
-    background: var(--bg);
+    background: #ffffff;
+    color: #000000 !important;
+  }
+
+  .post-card h1,
+  .post-card h2,
+  .post-card h3,
+  .post-card p {
+    color: #000000 !important;
   }
 }
