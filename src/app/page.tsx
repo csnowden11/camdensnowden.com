@@ -191,10 +191,10 @@ export default function Home() {
           </div>
           <div className="col-6">
             <p>
-              Hi, I&apos;m Camden Snowden—Colorado native, husband, father of Charlie and Everett, and West Point graduate (B.S. Economics, magna cum laude). After 9 years of leading infantry and military intelligence organizations across two overseas tours and one operational deployment to Poland, I&apos;m channeling my strategic-intelligence expertise into venture and real-estate innovation while pursuing my MBA at Berkeley Haas.
+              Hi, I&apos;m Camden Snowden - Colorado native, married to Payson for nearly 8 years, father of Charlie and Everett, and West Point graduate (B.S. Economics, magna cum laude). After 9 years of leading infantry and military intelligence organizations across two overseas tours and one operational deployment to Poland, I&apos;m channeling my strategic-intelligence expertise into venture and real-estate innovation while pursuing my MBA at Berkeley Haas.
             </p>
             <ul>
-              <li><strong>Years in service:</strong> 9</li>
+              <li><strong>Years of Army service:</strong> 13</li>
               <li><strong>Overseas tours:</strong> 2</li>
               <li><strong>Operational deployments:</strong> 1</li>
             </ul>
@@ -215,7 +215,7 @@ export default function Home() {
               <li><time dateTime="2025">April 2025</time> – Summer Associate, Context VC</li>
               <li><time dateTime="2025">August 2025</time> – MBA candidate, Berkeley Haas</li>
             </ul>
-            <p><strong>$250 M</strong> in assets, <strong>0 losses</strong>. Trained <strong>thousands</strong> of soldiers.</p>
+            <p><strong>$250 Million in assets managed</strong>, <strong>0 losses</strong>. Trained <strong>thousands</strong> of soldiers.</p>
           </div>
           <div className="col-6">
             <Image
