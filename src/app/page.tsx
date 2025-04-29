@@ -291,9 +291,9 @@ export default function Home() {
           <h2>Personal Blog</h2>
           <div className="row">
             <div className="col-4 post-card">
-              <h3>Lessons I'd Teach My Kids: A Parent's Guide</h3>
+              <h3>Lessons I Want to Teach My Kids</h3>
               <p>A collection of life lessons and wisdom I've gathered throughout my journey as a parent, military officer, and business leader.</p>
-              <a href="/pdfs/Lessons-Id-Teach-My-Kids-A-Parents-Guide.pdf" className="btn" target="_blank" rel="noopener noreferrer">Read PDF</a>
+              <a href="https://gamma.app/docs/Lessons-I-want-to-teach-my-kids-ji8jjx187ujsvhy" className="btn" target="_blank" rel="noopener noreferrer">Read Article</a>
             </div>
           </div>
         </div>
