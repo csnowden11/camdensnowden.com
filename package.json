@@ -4,9 +4,8 @@
   "description": "Camden Snowden's personal portfolio website",
   "scripts": {
     "start": "npx http-server .",
-    "prebuild": "echo 'Preparing build...'",
-    "build": "echo 'Building site...' && mkdir -p $NETLIFY_BUILD_BASE && cp -r ./* $NETLIFY_BUILD_BASE/",
-    "clean": "rm -rf node_modules",
+    "build": "echo 'Building site...' && mkdir -p dist && cp -r ./* dist/",
+    "clean": "rm -rf node_modules dist",
     "optimize": "bash optimize_images.sh"
   },
   "dependencies": {
@@ -14,7 +13,8 @@
   },
   "devDependencies": {},
   "engines": {
-    "node": ">=14.0.0"
+    "node": "18.x",
+    "npm": "9.x"
   },
   "private": true,
   "license": "UNLICENSED"
