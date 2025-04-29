@@ -12,6 +12,19 @@ export default function Home() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Smooth scroll function
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const targetId = e.currentTarget.getAttribute('href')?.substring(1);
+    if (targetId) {
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        setIsMenuOpen(false);
+      }
+    }
+  };
+
   useEffect(() => {
     // Initialize carousel
     const initCarousel = () => {
@@ -101,7 +114,7 @@ export default function Home() {
       {/* Header */}
       <header>
         <nav aria-label="Main">
-          <a className="logo" href="#overview">CS.</a>
+          <a className="logo" href="#overview" onClick={scrollToSection}>CS.</a>
 
           <button
             className="hamburger"
@@ -118,13 +131,13 @@ export default function Home() {
             className={`nav-links ${isMenuOpen ? 'open' : ''}`}
             role="navigation"
           >
-            <li><a href="#overview">Overview</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#career">Career&nbsp;Timeline</a></li>
-            <li><a href="#outside">Outside&nbsp;of&nbsp;Work</a></li>
-            <li><a href="#thoughts">Thoughts</a></li>
-            <li><a href="#blog">Personal&nbsp;Blog</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#overview" onClick={scrollToSection}>Overview</a></li>
+            <li><a href="#about" onClick={scrollToSection}>About</a></li>
+            <li><a href="#career" onClick={scrollToSection}>Career&nbsp;Timeline</a></li>
+            <li><a href="#outside" onClick={scrollToSection}>Outside&nbsp;of&nbsp;Work</a></li>
+            <li><a href="#thoughts" onClick={scrollToSection}>Thoughts</a></li>
+            <li><a href="#blog" onClick={scrollToSection}>Personal&nbsp;Blog</a></li>
+            <li><a href="#contact" onClick={scrollToSection}>Contact</a></li>
           </ul>
         </nav>
       </header>
@@ -210,7 +223,7 @@ export default function Home() {
               <li><time dateTime="2016">2016</time> – Commissioned from West Point</li>
               <li><time dateTime="2016">2016-2020</time> – Infantry Officer</li>
               <li><time dateTime="2017">2017</time> – Operational deployment</li>
-              <li><time dateTime="2022">2022-2024</time> – Command, 280 soldiers, $250 M equipment</li>
+              <li><time dateTime="2022">2022-2024</time> – Company Command, 280 soldiers, $250 M equipment</li>
               <li><time dateTime="2025">2025</time> – Summer Associate, Context VC</li>
               <li><time dateTime="2025">2025</time> – MBA candidate, Berkeley Haas</li>
             </ul>
@@ -249,15 +262,15 @@ export default function Home() {
             <div className="thought-card">
               <h3>Books</h3>
               <ul>
-                <li><a href="https://www.amazon.com/dp/0062315005" target="_blank" rel="noopener noreferrer">The Alchemist - Paulo Coelho</a></li>
-                <li><a href="https://www.amazon.com/dp/0062315005" target="_blank" rel="noopener noreferrer">Atomic Habits - James Clear</a></li>
+                <li><a href="https://www.amazon.com/Pioneering-Portfolio-Management-David-Swensen/dp/0743222338" target="_blank" rel="noopener noreferrer">Pioneering Portfolio Management - David Swensen</a></li>
+                <li><a href="https://www.amazon.com/Lean-Startup-Entrepreneurs-Continuous-Innovation/dp/0307887898" target="_blank" rel="noopener noreferrer">The Lean Startup - Eric Ries</a></li>
               </ul>
             </div>
             <div className="thought-card">
               <h3>Websites</h3>
               <ul>
-                <li><a href="https://www.farnamstreetblog.com/" target="_blank" rel="noopener noreferrer">Farnam Street</a></li>
-                <li><a href="https://www.collaborativefund.com/blog/" target="_blank" rel="noopener noreferrer">Collaborative Fund</a></li>
+                <li><a href="https://www.drudgereport.com/" target="_blank" rel="noopener noreferrer">Drudge Report</a></li>
+                <li><a href="https://www.nytimes.com/" target="_blank" rel="noopener noreferrer">The New York Times</a></li>
               </ul>
             </div>
             <div className="thought-card">
@@ -290,48 +303,18 @@ export default function Home() {
       {/* Contact Section */}
       <section id="contact" className="container fade-in">
         <h2>Contact</h2>
-        <form action="https://formspree.io/f/xovdjwaw" method="POST">
-          <label>
-            Name
-            <input type="text" name="name" required />
-          </label>
-          <label>
-            Email
-            <input type="email" name="_replyto" required />
-          </label>
-          <label>
-            Subject
-            <input type="text" name="_subject" required />
-          </label>
-          <label>
-            Message
-            <textarea name="message" rows={5} required></textarea>
-          </label>
-          <button className="btn" type="submit">Send Message</button>
-        </form>
-        <p>Or email directly: <a href="mailto:camden.snowden@contextvc.com">camden.snowden@contextvc.com</a></p>
-        <p className="social">
-          <a href="https://linkedin.com/in/camden-snowden">LinkedIn</a>
-        </p>
+        <div className="contact-content">
+          <p>Email: <a href="mailto:camden.snowden@contextvc.com">camden.snowden@contextvc.com</a></p>
+          <p className="social">
+            <a href="https://linkedin.com/in/camden-snowden">LinkedIn</a>
+          </p>
+        </div>
       </section>
 
       {/* Footer */}
       <footer className="alt">
         <div className="container">
-          <div className="footer-content">
-            <p>© 2025 Camden Snowden. All rights reserved.</p>
-            <nav>
-              <ul>
-                <li><a href="#overview">Overview</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#career">Career</a></li>
-                <li><a href="#outside">Outside of Work</a></li>
-                <li><a href="#thoughts">Thoughts</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
-              </ul>
-            </nav>
-          </div>
+          <p>© 2025 Camden Snowden. All rights reserved.</p>
         </div>
       </footer>
     </main>
