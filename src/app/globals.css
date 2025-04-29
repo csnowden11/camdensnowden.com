@@ -693,3 +693,60 @@ footer p {
     object-fit: contain;
   }
 }
+
+/* Blog page mobile styles */
+@media (max-width: 768px) {
+  .blog-content {
+    color: var(--txt);
+    padding: 1rem;
+  }
+
+  .blog-content h1 {
+    font-size: 2rem;
+    color: var(--txt);
+    margin-bottom: 1rem;
+  }
+
+  .blog-content h2 {
+    font-size: 1.5rem;
+    color: var(--txt);
+    margin: 1.5rem 0 1rem;
+  }
+
+  .blog-content h3 {
+    font-size: 1.2rem;
+    color: var(--txt);
+    margin: 1rem 0 0.5rem;
+  }
+
+  .blog-content p {
+    font-size: 1rem;
+    color: var(--txt);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .blog-content .stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .blog-content .stat {
+    width: 100%;
+  }
+
+  .blog-content .lesson-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .blog-content .lesson-point {
+    width: 100%;
+  }
+
+  .post-card {
+    padding: 1rem;
+    margin: 0;
+    background: var(--bg);
+  }
+}
