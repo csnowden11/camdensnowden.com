@@ -136,7 +136,7 @@ export default function Home() {
             <li><a href="#career" onClick={scrollToSection}>Career&nbsp;Timeline</a></li>
             <li><a href="#outside" onClick={scrollToSection}>Outside&nbsp;of&nbsp;Work</a></li>
             <li><a href="#thoughts" onClick={scrollToSection}>Thoughts</a></li>
-            <li><a href="#blog" onClick={scrollToSection}>Personal&nbsp;Blog</a></li>
+            <li><a href="/blog">Blog</a></li>
             <li><a href="#contact" onClick={scrollToSection}>Contact</a></li>
           </ul>
         </nav>
@@ -202,7 +202,7 @@ export default function Home() {
           </div>
           <div className="col-6">
             <p>
-              Hi, I&apos;m Camden Snowden - Colorado native, married to Payson for nearly 8 years, father of Charlie and Everett, and West Point graduate (B.S. Economics, magna cum laude). After 9 years of leading infantry and military intelligence organizations across two overseas tours and one operational deployment to Poland, I&apos;m channeling my strategic-intelligence expertise into venture and real-estate innovation while pursuing my MBA at Berkeley Haas.
+              Hi, I&apos;m Camden Snowden - Colorado native, married to Payson for nearly 8 years, father of Charlie and Everett, and West Point graduate (B.S. Economics, magna cum laude). After 9 years of leading infantry and military intelligence organizations across two overseas tours and one operational deployment to Poland, I&apos;m channeling my strategic-intelligence expertise while pursuing my MBA at Berkeley Haas.
             </p>
             <ul>
               <li><strong>Years of Army service:</strong> 13</li>
@@ -279,20 +279,6 @@ export default function Home() {
                 <li><a href="https://www.chrishutchins.com/" target="_blank" rel="noopener noreferrer">All the Hacks</a></li>
                 <li><a href="https://www.churninglife.com/" target="_blank" rel="noopener noreferrer">Churning Life</a></li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Blog Section */}
-      <section id="blog" className="alt fade-in">
-        <div className="container">
-          <h2>Personal Blog</h2>
-          <div className="row">
-            <div className="col-4 post-card">
-              <h3>Life Lessons for My Sons</h3>
-              <p>Wisdom and guidance for Charlie and Everett's journey through life.</p>
-              <a href="https://life-lessons-sons-gsj2i5x.gamma.site/" className="btn" target="_blank" rel="noopener noreferrer">Read Article</a>
             </div>
           </div>
         </div>
