@@ -262,7 +262,7 @@ export default function Home() {
             <div className="thought-card">
               <h3>Books</h3>
               <ul>
-                <li><a href="https://www.amazon.com/Pioneering-Portfolio-Management-David-Swensen/dp/0743222338" target="_blank" rel="noopener noreferrer">Pioneering Portfolio Management - David Swensen</a></li>
+                <li><a href="https://yalebooks.yale.edu/book/9780300168644/pioneering-portfolio-management/" target="_blank" rel="noopener noreferrer">Pioneering Portfolio Management - David Swensen</a></li>
                 <li><a href="https://www.amazon.com/Lean-Startup-Entrepreneurs-Continuous-Innovation/dp/0307887898" target="_blank" rel="noopener noreferrer">The Lean Startup - Eric Ries</a></li>
               </ul>
             </div>
@@ -291,8 +291,9 @@ export default function Home() {
           <h2>Personal Blog</h2>
           <div className="row">
             <div className="col-4 post-card">
-              <h3>Coming Soon</h3>
-              <p>Stay tuned for insights on leadership, military-to-civilian transition, and business strategy.</p>
+              <h3>Lessons I'd Teach My Kids: A Parent's Guide</h3>
+              <p>A collection of life lessons and wisdom I've gathered throughout my journey as a parent, military officer, and business leader.</p>
+              <a href="/pdfs/Lessons-Id-Teach-My-Kids-A-Parents-Guide.pdf" className="btn" target="_blank" rel="noopener noreferrer">Read PDF</a>
             </div>
           </div>
         </div>
