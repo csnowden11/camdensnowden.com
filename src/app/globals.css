@@ -763,3 +763,26 @@ footer p {
     color: #000000 !important;
   }
 }
+
+.hero-carousel .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  transition: transform 0.5s ease;
+}
+
+.hero-carousel .carousel-item.active img {
+  transform: scale(0.8);
+}
+
+@media (max-width: 768px) {
+  .hero-carousel .carousel-item img {
+    object-fit: contain;
+    object-position: center center;
+  }
+  
+  .hero-carousel .carousel-item.active img {
+    transform: scale(0.7);
+  }
+}
