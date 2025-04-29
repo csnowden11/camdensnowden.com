@@ -32,7 +32,7 @@ export default function Home() {
       const interval = setInterval(() => {
         idx = (idx + 1) % imgs.length;
         updateSlide(idx);
-      }, 4000);
+      }, 6000);
 
       // Touch handling
       let touchStartX = 0;
@@ -138,7 +138,7 @@ export default function Home() {
             height={800}
             priority
             className="hero-image"
-            style={{ transform: 'translateX(0%)' }}
+            style={{ transform: 'translateX(0%)', objectFit: 'cover' }}
           />
           <Image
             src="/img/personal2_800.jpg"
@@ -147,7 +147,7 @@ export default function Home() {
             height={800}
             priority
             className="hero-image"
-            style={{ transform: 'translateX(100%)' }}
+            style={{ transform: 'translateX(100%)', objectFit: 'cover' }}
           />
           <Image
             src="/img/personal3_800.jpg"
@@ -156,7 +156,7 @@ export default function Home() {
             height={800}
             priority
             className="hero-image"
-            style={{ transform: 'translateX(200%)' }}
+            style={{ transform: 'translateX(200%)', objectFit: 'cover' }}
           />
           <Image
             src="/img/personal4_800.jpg"
@@ -165,7 +165,7 @@ export default function Home() {
             height={800}
             priority
             className="hero-image"
-            style={{ transform: 'translateX(300%)' }}
+            style={{ transform: 'translateX(300%)', objectFit: 'cover' }}
           />
           <div className="overlay">
             <h1>From the Long Gray Line to the Bottom Line™</h1>
@@ -237,7 +237,7 @@ export default function Home() {
       {/* Outside of Work Section */}
       <section id="outside" className="container fade-in">
         <h2>Outside of Work</h2>
-        <p>Marathoner 🏃 – sourdough enthusiast 🍞 – devoted family man 👨‍👩‍👦‍👦 – mentor to transitioning veterans.</p>
+        <p>Runner</p>
       </section>
 
       {/* Blog Section */}
@@ -284,17 +284,19 @@ export default function Home() {
       {/* Footer */}
       <footer className="alt">
         <div className="container">
-          <nav>
-            <ul>
-              <li><a href="#overview">Overview</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#career">Career</a></li>
-              <li><a href="#outside">Outside of Work</a></li>
-              <li><a href="#blog">Blog</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </nav>
-          <p>© 2025 Camden Snowden. All rights reserved.</p>
+          <div className="footer-content">
+            <p>© 2025 Camden Snowden. All rights reserved.</p>
+            <nav>
+              <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#career">Career</a></li>
+                <li><a href="#outside">Outside of Work</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </footer>
     </main>
