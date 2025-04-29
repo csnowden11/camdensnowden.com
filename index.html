@@ -21,14 +21,60 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="loading-container">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading...</div>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Image Banner Section -->
+    <section class="image-banner">
+        <div class="banner-grid">
+            <div class="banner-image">
+                <img src="images/infantry-service.jpg" alt="Infantry Service" loading="lazy">
+            </div>
+            <div class="banner-image">
+                <img src="images/military-intel.jpg" alt="Military Intelligence" loading="lazy">
+            </div>
+            <div class="banner-image">
+                <img src="images/military-leadership.jpg" alt="Military Leadership" loading="lazy">
+            </div>
+            <div class="banner-image">
+                <img src="images/infantry-group.jpg" alt="Team Leadership" loading="lazy">
+            </div>
+        </div>
+    </section>
+
     <!-- Theme Toggle and Actions -->
     <div class="floating-actions">
         <button class="theme-toggle" aria-label="Toggle Dark Mode">
             <i class="fas fa-moon"></i>
         </button>
-        <a href="/files/camden-snowden-resume.pdf" class="resume-download" download aria-label="Download Resume">
-            <i class="fas fa-file-download"></i>
-        </a>
+        <div class="resume-action">
+            <span class="resume-label">My Resume</span>
+            <a href="/files/camden-snowden-resume.pdf" class="resume-download" download aria-label="Download Resume">
+                <i class="fas fa-file-download"></i>
+            </a>
+        </div>
     </div>
 
     <!-- Navigation -->
@@ -360,16 +406,16 @@
             <div class="personal-content">
                 <h2>Life Beyond<br><span class="highlight">Leadership</span></h2>
                 <div class="personal-grid">
-                    <div class="personal-card">
-                        <img src="images/family.jpg" alt="Family Life">
+                    <div class="personal-card fade-in">
+                        <img src="images/family.jpg" alt="Family Life" loading="lazy">
                         <h3>Family First</h3>
                     </div>
-                    <div class="personal-card">
-                        <img src="images/fishing.jpg" alt="Outdoor Adventures">
+                    <div class="personal-card fade-in">
+                        <img src="images/fishing.jpg" alt="Outdoor Adventures" loading="lazy">
                         <h3>Adventure Seeker</h3>
                     </div>
-                    <div class="personal-card">
-                        <img src="images/skiing.jpg" alt="Active Lifestyle">
+                    <div class="personal-card fade-in">
+                        <img src="images/skiing.jpg" alt="Active Lifestyle" loading="lazy">
                         <h3>Active Living</h3>
                     </div>
                 </div>
@@ -381,17 +427,17 @@
     <section id="blog" class="blog">
         <div class="container">
             <h2>Leadership Insights<br><span class="highlight">From the Field</span></h2>
-            <p class="lead-text">Sharing experiences and lessons from military service to business innovation</p>
+            <p class="lead-text">Combat-tested leadership principles and military wisdom applied to business and life.</p>
             
             <div class="blog-grid">
                 <article class="blog-card fade-in">
                     <div class="blog-image">
-                        <img src="images/IMG_1560.jpg" alt="Leadership Insights">
+                        <img src="images/military-leadership.jpg" alt="Leadership Insights">
                         <div class="blog-category">Leadership</div>
                     </div>
                     <div class="blog-content">
-                        <h3>Military Leadership in Business</h3>
-                        <p>Translating battlefield decision-making to corporate strategy...</p>
+                        <h3>Decision Making Under Pressure: Military Lessons for Business Leaders.</h3>
+                        <p>How combat leadership principles can enhance business decision-making in high-stakes situations.</p>
                         <div class="blog-meta">
                             <span><i class="far fa-calendar"></i> Mar 15, 2024</span>
                             <span><i class="far fa-clock"></i> 5 min read</span>
@@ -402,12 +448,12 @@
 
                 <article class="blog-card fade-in">
                     <div class="blog-image">
-                        <img src="images/IMG_1561.jpg" alt="Global Perspective">
-                        <div class="blog-category">Global Impact</div>
+                        <img src="images/infantry-group.jpg" alt="Team Building">
+                        <div class="blog-category">Team Building</div>
                     </div>
                     <div class="blog-content">
-                        <h3>Global Perspectives in Leadership</h3>
-                        <p>Insights from leading teams across different cultures...</p>
+                        <h3>Building Elite Teams: From Infantry to Industry.</h3>
+                        <p>Translating military team-building principles into effective business unit cohesion.</p>
                         <div class="blog-meta">
                             <span><i class="far fa-calendar"></i> Mar 1, 2024</span>
                             <span><i class="far fa-clock"></i> 4 min read</span>
@@ -418,12 +464,12 @@
 
                 <article class="blog-card fade-in">
                     <div class="blog-image">
-                        <img src="images/IMG_1562.jpg" alt="Innovation">
-                        <div class="blog-category">Innovation</div>
+                        <img src="images/military-intel.jpg" alt="Strategic Planning">
+                        <div class="blog-category">Strategy</div>
                     </div>
                     <div class="blog-content">
-                        <h3>Innovation in Traditional Structures</h3>
-                        <p>Bringing startup thinking to established organizations...</p>
+                        <h3>Strategic Intelligence in Business Operations.</h3>
+                        <p>Applying military intelligence methodologies to business strategy and market analysis.</p>
                         <div class="blog-meta">
                             <span><i class="far fa-calendar"></i> Feb 15, 2024</span>
                             <span><i class="far fa-clock"></i> 6 min read</span>

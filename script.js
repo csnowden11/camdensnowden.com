@@ -573,13 +573,60 @@ contactForm?.addEventListener('submit', async (e) => {
 // Image error handling
 function handleImageError(img) {
     img.onerror = null; // Prevent infinite loop
-    img.src = 'https://via.placeholder.com/400x300?text=Image+Coming+Soon';
+    const section = img.closest('.personal-card, .gallery-item, .timeline-image') || img.parentElement;
+    const errorMessage = section.classList.contains('personal-card') ? 'Personal photo coming soon'
+        : section.classList.contains('gallery-item') ? 'Gallery image coming soon'
+        : section.classList.contains('timeline-image') ? 'Timeline photo coming soon'
+        : 'Image coming soon';
+    
+    img.src = `https://via.placeholder.com/400x300?text=${encodeURIComponent(errorMessage)}`;
     img.classList.add('placeholder-image');
+    section.classList.add('image-error');
+}
+
+// Function to handle image loading states
+function handleImageLoading(img) {
+    const section = img.closest('.personal-card, .gallery-item, .timeline-image') || img.parentElement;
+    section.classList.add('loading');
+    
+    img.addEventListener('load', () => {
+        section.classList.remove('loading');
+        section.classList.add('loaded');
+        // Trigger fade-in animation after image loads
+        requestAnimationFrame(() => {
+            img.style.opacity = '1';
+            section.classList.add('fade-in');
+        });
+    });
+}
+
+// Function to optimize image loading
+function optimizeImageLoading(img) {
+    // Add loading="lazy" for images below the fold
+    if (!img.hasAttribute('loading')) {
+        img.loading = 'lazy';
+    }
+    
+    // Add srcset for responsive images if available
+    const src = img.getAttribute('src');
+    if (src && !img.hasAttribute('srcset') && src.startsWith('images/')) {
+        const baseName = src.replace('images/', '').split('.')[0];
+        const ext = src.split('.').pop();
+        // Add srcset only for local images
+        img.srcset = `
+            images/${baseName}-small.${ext} 300w,
+            images/${baseName}-medium.${ext} 600w,
+            images/${baseName}.${ext} 1200w
+        `;
+        img.sizes = '(max-width: 600px) 300px, (max-width: 1200px) 600px, 1200px';
+    }
 }
 
 // Add error handling to all images
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('img').forEach(img => {
+        handleImageLoading(img);
+        optimizeImageLoading(img);
         img.addEventListener('error', () => handleImageError(img));
     });
 });
@@ -589,14 +636,14 @@ const careerMilestones = [
     {
         date: '2025',
         title: 'MBA Candidate at Berkeley Haas',
-        description: 'Transitioned from active duty military service to pursue an MBA at UC Berkeley\'s Haas School of Business, focusing on leadership and business innovation.',
+        description: 'Transitioning from active duty military service to pursue an MBA at UC Berkeley\'s Haas School of Business, focusing on leadership and business innovation.',
         image: 'images/berkeley-haas.jpg',
         tags: ['MBA', 'Business Strategy', 'Leadership', 'Career Transition']
     },
     {
         date: '2020-2025',
         title: 'Military Intelligence Officer',
-        description: 'Transitioned to Military Intelligence branch, leading intelligence operations and strategic planning initiatives. Applied analytical expertise to complex military operations.',
+        description: 'Led intelligence operations and strategic planning initiatives across multiple theaters of operation. Applied analytical expertise to complex military operations.',
         image: 'images/military-intel.jpg',
         tags: ['Military Intelligence', 'Strategic Planning', 'Leadership', 'Analytics']
     },
@@ -608,7 +655,7 @@ const careerMilestones = [
         tags: ['Infantry', 'Combat Leadership', 'Team Management', 'Tactical Operations']
     },
     {
-        date: '2016',
+        date: '2012-2016',
         title: 'United States Military Academy',
         description: 'Graduated from West Point, earning a Bachelor\'s degree and commission as an Army Officer. Developed foundational leadership skills and military expertise.',
         image: 'images/westpoint.jpg',
@@ -673,13 +720,16 @@ function loadImages() {
         } else if (img.classList.contains('action')) {
             img.src = imageConfig.profile.action;
         }
+        handleImageLoading(img);
+        optimizeImageLoading(img);
     });
 
     // Gallery section
     const galleryContainer = document.querySelector('.journey-gallery .gallery-grid');
     if (galleryContainer) {
         galleryContainer.innerHTML = imageConfig.gallery.map(image => `
-            <div class="gallery-item fade-in">
+            <div class="gallery-item">
+                <div class="loading-indicator"></div>
                 <img src="${image.src}" alt="${image.alt}" loading="lazy">
                 <div class="gallery-caption">${image.caption}</div>
             </div>
@@ -690,15 +740,18 @@ function loadImages() {
     const personalContainer = document.querySelector('.personal-grid');
     if (personalContainer) {
         personalContainer.innerHTML = imageConfig.personal.map(image => `
-            <div class="personal-card fade-in">
+            <div class="personal-card">
+                <div class="loading-indicator"></div>
                 <img src="${image.src}" alt="${image.alt}" loading="lazy">
                 <h3>${image.caption}</h3>
             </div>
         `).join('');
     }
 
-    // Add error handling to all images
+    // Initialize all new images
     document.querySelectorAll('img').forEach(img => {
+        handleImageLoading(img);
+        optimizeImageLoading(img);
         img.addEventListener('error', () => handleImageError(img));
     });
 }
@@ -740,4 +793,116 @@ document.addEventListener('DOMContentLoaded', () => {
     loadImages();
     renderCareerTimeline();
     // ... existing DOMContentLoaded code ...
+});
+
+// Loading State Handler
+document.addEventListener('DOMContentLoaded', () => {
+    const loadingContainer = document.querySelector('.loading-container');
+    const mainContent = document.querySelector('main');
+    
+    // Hide loading screen after content is loaded
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            loadingContainer.classList.add('hidden');
+            initializeAnimations();
+        }, 500); // Short delay for smooth transition
+    });
+});
+
+// Fade-in Animation Handler
+function initializeAnimations() {
+    const fadeElements = document.querySelectorAll('section');
+    fadeElements.forEach(element => {
+        element.classList.add('fade-in');
+    });
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Stop observing once visible
+            }
+        });
+    }, observerOptions);
+
+    fadeElements.forEach(element => {
+        observer.observe(element);
+    });
+}
+
+// Wait for the page to load
+document.addEventListener('DOMContentLoaded', () => {
+    // Handle loading container
+    const loadingContainer = document.querySelector('.loading-container');
+    
+    // Hide loading container when page is loaded
+    window.addEventListener('load', () => {
+        loadingContainer.classList.add('hidden');
+        setTimeout(() => {
+            loadingContainer.style.display = 'none';
+        }, 500);
+    });
+
+    // Mobile menu functionality
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const body = document.body;
+
+    // Toggle mobile menu
+    mobileMenuBtn?.addEventListener('click', () => {
+        mobileMenuBtn.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        body.classList.toggle('menu-open');
+    });
+
+    // Close mobile menu when clicking menu items
+    const mobileMenuLinks = document.querySelectorAll('.mobile-nav a');
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenuBtn.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            body.classList.remove('menu-open');
+        });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target) && 
+            !mobileMenuBtn.contains(e.target) && 
+            mobileMenu.classList.contains('active')) {
+            mobileMenuBtn.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            body.classList.remove('menu-open');
+        }
+    });
+
+    // Prevent body scroll when menu is open
+    body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+
+    // Intersection Observer for section animations
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Stop observing once visible
+            }
+        });
+    }, observerOptions);
+
+    // Observe all sections
+    document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+    });
 }); 
