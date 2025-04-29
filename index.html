@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Camden Snowden - Army Officer & Future Berkeley Haas MBA Candidate">
-    <title>Camden Snowden - Professional Portfolio</title>
+    <meta name="description" content="Camden Snowden - Leadership Through Service">
+    <title>Camden Snowden - Leadership & Innovation</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
@@ -12,7 +12,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -21,6 +21,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Theme Toggle and Actions -->
+    <div class="floating-actions">
+        <button class="theme-toggle" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+        </button>
+        <a href="/files/camden-snowden-resume.pdf" class="resume-download" download aria-label="Download Resume">
+            <i class="fas fa-file-download"></i>
+        </a>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="navbar-content">
@@ -31,87 +41,379 @@
                 <span class="bar"></span>
             </button>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#impact">Impact</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#blog">My Blog</a></li>
+                <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero full-height">
         <div class="hero-content">
-            <img src="images/profile.jpeg" alt="Camden Snowden" class="profile-image fade-in">
-            <h1 class="fade-in">Camden Snowden</h1>
-            <p class="subtitle fade-in">Business Leader & Strategic Innovator</p>
-            <div class="motivational-quote fade-in">
-                "Driving Innovation Through Strategic Leadership"
+            <h1 class="mega-text">Leadership through<br><span class="highlight">Service & Innovation</span></h1>
+            <p class="subtitle">From West Point to Berkeley Haas, forging a path of impactful leadership</p>
+            <div class="cta-buttons">
+                <a href="#journey" class="button button-primary">Explore My Journey</a>
+                <a href="#contact" class="button button-secondary">Get in Touch</a>
             </div>
-            <div class="button-group">
-                <a href="#contact" class="button button-primary">Get in Touch</a>
-                <a href="#about" class="button button-secondary">Learn More</a>
-            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to Explore</span>
+            <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- Impact Stats Section -->
+    <section id="impact" class="impact-stats">
         <div class="container">
-            <h2 class="animate-on-scroll">About Me</h2>
-            <div class="about-content">
-                <div class="about-text animate-on-scroll">
-                    <p>As an Army Officer with a passion for leadership and innovation, I bring a unique perspective shaped by military service and academic excellence. My journey from West Point to Berkeley Haas represents my commitment to continuous growth and impactful leadership.</p>
-                    <p>I believe in the power of combining strategic thinking with decisive action, whether leading troops in the field or tackling complex business challenges.</p>
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <h3>Years of Service</h3>
+                    <div class="stat-number">8+</div>
+                    <p>Military Leadership</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <h3>Troops Led</h3>
+                    <div class="stat-number">150+</div>
+                    <p>Direct Leadership</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <h3>Countries</h3>
+                    <div class="stat-number">12</div>
+                    <p>Global Operations</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <h3>Projects</h3>
+                    <div class="stat-number">25+</div>
+                    <p>Strategic Initiatives</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education" class="education">
+    <!-- Achievement Timeline -->
+    <section id="achievements" class="achievements">
         <div class="container">
-            <h2 class="animate-on-scroll">Education</h2>
-            <div class="grid">
-                <div class="education-card fade-in">
-                    <img src="images/berkeley-haas.jpeg" alt="UC Berkeley Haas School of Business" class="education-image">
-                    <div class="education-content">
-                        <h3 class="education-title">UC Berkeley Haas School of Business</h3>
-                        <p>Master of Business Administration</p>
+            <h2>Career Journey<br><span class="highlight">Key Milestones</span></h2>
+            <p class="lead-text">A timeline of leadership, service, and innovation</p>
+            
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024</div>
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-info">
+                            <h3>Berkeley Haas MBA</h3>
+                            <p>Focused on innovation and entrepreneurship, bridging military leadership with business strategy</p>
+                            <div class="timeline-tags">
+                                <span>Business Innovation</span>
+                                <span>Leadership</span>
+                                <span>Strategy</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="education-card fade-in">
-                    <img src="images/westpoint.png" alt="United States Military Academy at West Point" class="education-image">
-                    <div class="education-content">
-                        <h3 class="education-title">United States Military Academy</h3>
-                        <p>Bachelor of Science</p>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020-2023</div>
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-info">
+                            <h3>Military Leadership</h3>
+                            <p>Led diverse teams across multiple countries, managing complex operations and strategic initiatives</p>
+                            <div class="timeline-tags">
+                                <span>Team Leadership</span>
+                                <span>Global Operations</span>
+                                <span>Strategy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2016-2020</div>
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-info">
+                            <h3>West Point</h3>
+                            <p>Graduated with honors, establishing a strong foundation in leadership and strategic thinking</p>
+                            <div class="timeline-tags">
+                                <span>Military Science</span>
+                                <span>Leadership</span>
+                                <span>Engineering</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-nav">
+                <button class="timeline-nav-btn prev" aria-label="Previous Achievement">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="timeline-nav-btn next" aria-label="Next Achievement">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Core Competencies<br><span class="highlight">Skills & Expertise</span></h2>
+            <p class="lead-text">A blend of military precision and business innovation</p>
+            
+            <div class="skills-grid">
+                <div class="skill-category fade-in">
+                    <h3>Leadership</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Strategic Planning</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Team Management</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Crisis Management</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>Business</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Project Management</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Strategic Analysis</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Innovation Management</span>
+                                <span>87%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" style="width: 87%"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
         <div class="container">
-            <h2 class="animate-on-scroll">Professional Experience</h2>
-            <div class="grid">
-                <div class="card fade-in">
-                    <h3>Leadership Experience</h3>
-                    <ul>
-                        <li>Strategic planning and execution</li>
-                        <li>Team leadership and development</li>
-                        <li>Project management and optimization</li>
-                    </ul>
+            <h2>Trusted Leadership<br><span class="highlight">What Others Say</span></h2>
+            <div class="testimonials-carousel">
+                <div class="testimonial-track">
+                    <div class="testimonial-card fade-in">
+                        <div class="testimonial-content">
+                            <p>"Camden's leadership style combines military precision with innovative thinking, making him an exceptional team leader."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="images/testimonial-1.jpg" alt="John Smith">
+                            <div class="author-info">
+                                <h4>John Smith</h4>
+                                <p>Former Commanding Officer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more testimonial cards as needed -->
                 </div>
-                <div class="card fade-in">
+                <div class="testimonial-nav">
+                    <button class="nav-btn prev" aria-label="Previous testimonial">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="nav-btn next" aria-label="Next testimonial">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button class="language-toggle" aria-label="Change Language">
+            <i class="fas fa-globe"></i>
+            <span>EN</span>
+        </button>
+        <div class="language-dropdown">
+            <a href="#" data-lang="en" class="active">English</a>
+            <a href="#" data-lang="es">Español</a>
+            <a href="#" data-lang="de">Deutsch</a>
+            <a href="#" data-lang="ko">한국어</a>
+        </div>
+    </div>
+
+    <!-- Social Media Bar -->
+    <div class="social-bar">
+        <a href="https://www.facebook.com/Camden.Snowden" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/camden_snowden" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <div class="social-share">
+            <button class="share-toggle" aria-label="Share">
+                <i class="fas fa-share-alt"></i>
+            </button>
+            <div class="share-dropdown">
+                <button data-platform="facebook" aria-label="Share on Facebook">
+                    <i class="fab fa-facebook"></i> Share
+                </button>
+                <button data-platform="twitter" aria-label="Share on Twitter">
+                    <i class="fab fa-twitter"></i> Tweet
+                </button>
+                <button data-platform="linkedin" aria-label="Share on LinkedIn">
+                    <i class="fab fa-linkedin"></i> Post
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay">
+        <div class="search-container">
+            <input type="search" id="site-search" placeholder="Search posts, projects, and more...">
+            <button class="search-close" aria-label="Close search">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="search-results"></div>
+        </div>
+    </div>
+
+    <!-- Add search trigger button to navbar -->
+    <button class="search-trigger" aria-label="Open search">
+        <i class="fas fa-search"></i>
+    </button>
+
+    <!-- World Map Section -->
+    <section id="locations" class="locations full-height">
+        <div class="video-container">
+            <video id="globe-video" autoplay muted loop playsinline>
+                <source src="videos/globe-locations.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        <div class="container">
+            <h2 class="section-title">Global Journey<br><span class="highlight">Where I've Called Home</span></h2>
+            <p class="lead-text">From military service to business leadership, my journey spans across continents</p>
+            <div class="locations-grid">
+                <div class="location-item fade-in">
+                    <i class="fas fa-map-marker-alt"></i>
                     <h3>Military Service</h3>
-                    <ul>
-                        <li>Decorated military officer</li>
-                        <li>Strategic operations management</li>
-                        <li>Cross-functional team leadership</li>
-                    </ul>
+                    <p>West Point, NY • Fort Benning, GA • Germany • South Korea</p>
+                </div>
+                <div class="location-item fade-in">
+                    <i class="fas fa-home"></i>
+                    <h3>Home Roots</h3>
+                    <p>Colorado • Michigan • Arizona</p>
+                </div>
+                <div class="location-item fade-in">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Education</h3>
+                    <p>Berkeley, CA • West Point, NY</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section id="journey" class="journey full-height">
+        <div class="container">
+            <div class="journey-grid">
+                <div class="journey-text">
+                    <h2>Military to Business<br><span class="highlight">Leadership Journey</span></h2>
+                    <p class="lead-text">Transforming military precision into business innovation</p>
+                    <div class="journey-points">
+                        <div class="point fade-in">
+                            <i class="fas fa-star"></i>
+                            <h3>West Point Graduate</h3>
+                            <p>Foundation in leadership and strategic thinking</p>
+                        </div>
+                        <div class="point fade-in">
+                            <i class="fas fa-users"></i>
+                            <h3>Military Leadership</h3>
+                            <p>Leading complex operations and diverse teams</p>
+                        </div>
+                        <div class="point fade-in">
+                            <i class="fas fa-university"></i>
+                            <h3>Berkeley Haas MBA</h3>
+                            <p>Bridging military leadership with business innovation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="journey-gallery">
+                    <div class="gallery-grid">
+                        <img src="images/west-point-portrait.jpg" alt="West Point Journey" class="fade-in">
+                        <img src="images/military-ceremony.jpg" alt="Military Service" class="fade-in">
+                        <img src="images/military-group.jpg" alt="Team Leadership" class="fade-in">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Section -->
+    <section id="personal" class="personal full-height">
+        <div class="container">
+            <div class="personal-content">
+                <h2>Life Beyond<br><span class="highlight">Leadership</span></h2>
+                <div class="personal-grid">
+                    <div class="personal-card fade-in">
+                        <img src="images/family-disney.jpg" alt="Family Adventures">
+                        <h3>Family First</h3>
+                        <p>Creating memories and sharing adventures</p>
+                    </div>
+                    <div class="personal-card fade-in">
+                        <img src="images/skiing.jpg" alt="Mountain Adventures">
+                        <h3>Adventure Seeker</h3>
+                        <p>Embracing challenges in nature</p>
+                    </div>
+                    <div class="personal-card fade-in">
+                        <img src="images/spearfishing.jpg" alt="Ocean Adventures">
+                        <h3>Ocean Explorer</h3>
+                        <p>Finding peace in the depths</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -120,32 +422,123 @@
     <!-- Blog Section -->
     <section id="blog" class="blog">
         <div class="container">
-            <h2 class="animate-on-scroll">My Blog</h2>
-            <div class="card fade-in">
-                <div class="blog-content">
-                    <h3>Coming Soon</h3>
-                    <p>I'm working on sharing my thoughts and experiences through a blog. Stay tuned for insights on leadership, innovation, and the intersection of military and business principles.</p>
-                    <div class="button-group">
-                        <a href="#contact" class="button button-secondary">Get Notified When Live</a>
+            <h2>Leadership Insights<br><span class="highlight">From the Field</span></h2>
+            <p class="lead-text">Sharing experiences and lessons from military service to business innovation</p>
+            
+            <div class="blog-grid">
+                <article class="blog-card fade-in">
+                    <div class="blog-image">
+                        <img src="images/leadership-lessons.jpg" alt="Leadership Lessons">
+                        <div class="blog-category">Leadership</div>
                     </div>
-                </div>
+                    <div class="blog-content">
+                        <h3>Military Leadership in Business</h3>
+                        <p>Translating battlefield decision-making to corporate strategy...</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Mar 15, 2024</span>
+                            <span><i class="far fa-clock"></i> 5 min read</span>
+                        </div>
+                        <a href="#" class="button button-secondary">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-card fade-in">
+                    <div class="blog-image">
+                        <img src="images/global-perspective.jpg" alt="Global Perspective">
+                        <div class="blog-category">Global Impact</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Global Perspectives in Leadership</h3>
+                        <p>Insights from leading teams across different cultures...</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Mar 1, 2024</span>
+                            <span><i class="far fa-clock"></i> 4 min read</span>
+                        </div>
+                        <a href="#" class="button button-secondary">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-card fade-in">
+                    <div class="blog-image">
+                        <img src="images/innovation.jpg" alt="Innovation">
+                        <div class="blog-category">Innovation</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Innovation in Traditional Structures</h3>
+                        <p>Bringing startup thinking to established organizations...</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Feb 15, 2024</span>
+                            <span><i class="far fa-clock"></i> 6 min read</span>
+                        </div>
+                        <a href="#" class="button button-secondary">Read More</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="blog-cta">
+                <a href="#" class="button button-primary">View All Posts</a>
+                <button class="button button-secondary newsletter-trigger">
+                    <i class="far fa-envelope"></i> Subscribe to Newsletter
+                </button>
             </div>
         </div>
     </section>
 
+    <!-- Newsletter Modal -->
+    <div class="modal" id="newsletter-modal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <h3>Stay Updated</h3>
+            <p>Get the latest insights on leadership and innovation delivered to your inbox.</p>
+            <form id="newsletter-form" class="newsletter-form">
+                <div class="form-group">
+                    <label for="newsletter-email">Email Address</label>
+                    <input type="email" id="newsletter-email" required>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" required>
+                        I agree to receive email updates. You can unsubscribe at any time.
+                    </label>
+                </div>
+                <button type="submit" class="button button-primary">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="animate-on-scroll">Get in Touch</h2>
-            <div class="card fade-in">
-                <p>I'm always open to discussing new opportunities and challenges.</p>
-                <div class="button-group">
-                    <a href="https://www.linkedin.com/in/camden-snowden/" class="button button-primary">
-                        <i class="fab fa-linkedin"></i> Connect on LinkedIn
-                    </a>
-                    <a href="mailto:camdensnowden@gmail.com" class="button button-secondary">
-                        <i class="far fa-envelope"></i> Email Me
-                    </a>
+            <div class="contact-content">
+                <h2>Let's Connect</h2>
+                <div class="contact-grid">
+                    <div class="contact-form-container">
+                        <form id="contact-form" class="contact-form" action="https://formspree.io/f/xovdjwaw" method="POST">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="button button-primary">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/camden-snowden/" class="button button-secondary">
+                                <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                            </a>
+                            <a href="mailto:camdensnowden@gmail.com" class="button button-secondary">
+                                <i class="far fa-envelope"></i> Email Me
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -159,38 +552,9 @@
     </footer>
 
     <!-- Main JavaScript -->
-    <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Fade-in animation on scroll
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach((element) => {
-            observer.observe(element);
-        });
-    </script>
+    <script src="script.js"></script>
+    
+    <!-- Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 </body>
 </html> 
