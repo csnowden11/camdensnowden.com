@@ -11,56 +11,81 @@ const debounce = (func, wait) => {
     };
 };
 
-// Mobile menu functionality with improved animations and touch handling
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+// Mobile Menu Toggle
+const mobileMenuButton = document.querySelector('.mobile-menu-button');
 const navLinks = document.querySelector('.nav-links');
-const navbar = document.querySelector('.navbar');
+const hamburger = document.querySelector('.hamburger');
 
-// Toggle mobile menu
-const toggleMobileMenu = () => {
-    mobileMenuBtn.classList.toggle('active');
+mobileMenuButton.addEventListener('click', () => {
+    mobileMenuButton.classList.toggle('active');
     navLinks.classList.toggle('active');
     document.body.classList.toggle('menu-open');
-};
-
-mobileMenuBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    toggleMobileMenu();
 });
 
 // Close mobile menu when clicking outside
 document.addEventListener('click', (e) => {
-    if (!e.target.closest('.navbar-content')) {
+    if (navLinks.classList.contains('active') &&
+        !e.target.closest('.nav-links') &&
+        !e.target.closest('.mobile-menu-button')) {
+        mobileMenuButton.classList.remove('active');
         navLinks.classList.remove('active');
         document.body.classList.remove('menu-open');
     }
 });
 
-// Handle touch events for mobile menu
-let touchStartX = 0;
-let touchEndX = 0;
-
-document.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
+// Close mobile menu when clicking a nav link
+navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenuButton.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    });
 });
 
-document.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipeGesture();
-});
+// Navbar scroll effect
+const navbar = document.querySelector('.navbar');
+let lastScroll = 0;
 
-const handleSwipeGesture = () => {
-    const swipeThreshold = 50;
-    const swipeDistance = touchEndX - touchStartX;
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
     
-    if (navLinks.classList.contains('active') && swipeDistance > swipeThreshold) {
-        // Swipe right to close menu
-        toggleMobileMenu();
-    } else if (!navLinks.classList.contains('active') && swipeDistance < -swipeThreshold) {
-        // Swipe left to open menu
-        toggleMobileMenu();
+    if (currentScroll > 100) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
     }
+    
+    if (currentScroll > lastScroll && currentScroll > 500) {
+        navbar.classList.add('nav-hidden');
+    } else {
+        navbar.classList.remove('nav-hidden');
+    }
+    
+    lastScroll = currentScroll;
+});
+
+// Enhanced scroll animations with stagger effect
+const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -50px 0px',
+    threshold: 0.1
 };
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            // Add both in-view and fade-in classes for combined effect
+            entry.target.classList.add('in-view', 'visible', 'fade-in');
+            
+            // Add stagger delay based on index
+            setTimeout(() => {
+                entry.target.style.transitionDelay = `${index * 0.1}s`;
+            }, index * 100);
+            
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
 
 // Enhanced smooth scrolling with mobile menu handling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -69,7 +94,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         
         // Close mobile menu if open
         if (navLinks.classList.contains('active')) {
-            toggleMobileMenu();
+            mobileMenuButton.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.classList.remove('menu-open');
         }
         
         const target = document.querySelector(this.getAttribute('href'));
@@ -112,28 +139,8 @@ const handleScroll = debounce(() => {
 
 window.addEventListener('scroll', handleScroll);
 
-// Enhanced intersection observer with stagger effect
-const observerOptions = {
-    root: null,
-    rootMargin: '0px 0px -50px 0px',
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible', 'fade-in');
-            // Add stagger delay based on index
-            setTimeout(() => {
-                entry.target.style.transitionDelay = `${index * 0.1}s`;
-            }, index * 100);
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
 // Observe all sections and their children
-document.querySelectorAll('section, .fade-in').forEach(element => {
+document.querySelectorAll('section, .fade-in, .animate-on-scroll').forEach((element, index) => {
     // Prepare element for animation
     element.style.opacity = '0';
     element.style.transform = 'translateY(20px)';
@@ -141,10 +148,10 @@ document.querySelectorAll('section, .fade-in').forEach(element => {
     
     // Animate children with stagger effect if it's a section
     if (element.tagName.toLowerCase() === 'section') {
-        element.querySelectorAll('.animate-on-scroll').forEach((child, index) => {
+        element.querySelectorAll('.animate-on-scroll').forEach((child, childIndex) => {
             child.style.opacity = '0';
             child.style.transform = 'translateY(20px)';
-            child.style.transitionDelay = `${index * 0.1}s`;
+            child.style.transitionDelay = `${(index + childIndex) * 0.1}s`;
             observer.observe(child);
         });
     }
@@ -172,14 +179,6 @@ window.addEventListener('scroll', function() {
     } else {
         navbar.style.boxShadow = 'none';
     }
-});
-
-// Close mobile menu when clicking a link
-navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        document.body.classList.remove('menu-open');
-    });
 });
 
 // Initialize and configure the map
@@ -403,16 +402,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Skills Animation
 const skillCategories = document.querySelectorAll('.skill-category');
-const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, observerOptions);
-
 skillCategories.forEach(category => {
-    skillObserver.observe(category);
+    observer.observe(category);
 });
 
 // Testimonials Carousel
