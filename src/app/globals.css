@@ -188,7 +188,7 @@ nav {
 /* Hero Carousel */
 #hero {
   position: relative;
-  height: 50vh;
+  height: 60vh;
   overflow: hidden;
   background: var(--bg);
 }
@@ -199,10 +199,11 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
+  object-fit: contain;
+  object-position: center;
   transition: transform 0.5s ease-in-out;
   will-change: transform;
+  background-color: var(--bg);
 }
 
 #hero .overlay {
@@ -211,21 +212,22 @@ nav {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: var(--bg);
-  padding: 1.5rem;
-  background: rgba(0, 0, 0, 0.5);
+  color: var(--txt);
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
   border-radius: var(--radius);
   max-width: 800px;
   width: 90%;
+  z-index: 2;
 }
 
 @media (max-width: 768px) {
   #hero {
-    height: 40vh;
+    height: 50vh;
   }
 
   .hero-image {
-    object-position: center 25%;
+    object-fit: contain;
   }
 
   #hero .overlay {
