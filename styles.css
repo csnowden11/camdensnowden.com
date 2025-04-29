@@ -162,12 +162,14 @@ section {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    transition: opacity var(--transition-speed) ease-out;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
 }
 
 .loading-container.hidden {
     opacity: 0;
-    pointer-events: none;
+    visibility: hidden;
 }
 
 .loading-spinner {
@@ -177,7 +179,6 @@ section {
     border-top: 3px solid transparent;
     border-radius: 50%;
     animation: spin 1s linear infinite;
-    margin-bottom: 1rem;
 }
 
 @keyframes spin {

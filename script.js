@@ -800,12 +800,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadingContainer = document.querySelector('.loading-container');
     const mainContent = document.querySelector('main');
     
-    // Hide loading screen after content is loaded
+    // Hide loading screen when page is ready
     window.addEventListener('load', () => {
-        setTimeout(() => {
-            loadingContainer.classList.add('hidden');
-            initializeAnimations();
-        }, 500); // Short delay for smooth transition
+        loadingContainer.classList.add('hidden');
     });
 });
 
@@ -860,15 +857,6 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileMenuBtn.classList.toggle('active');
             mobileMenu.classList.toggle('active');
             body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-        });
-
-        // Close menu on link click
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuBtn.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                body.style.overflow = '';
-            });
         });
 
         // Close menu when clicking outside
@@ -929,7 +917,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const applyTheme = (theme) => {
             htmlElement.setAttribute('data-theme', theme);
             localStorage.setItem('theme', theme);
-            themeToggle.querySelector('i').className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
         };
 
         // Initialize theme
