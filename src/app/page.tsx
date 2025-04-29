@@ -211,8 +211,8 @@ export default function Home() {
               <li><time dateTime="2016">2016-2020</time> – Infantry Officer</li>
               <li><time dateTime="2017">2017</time> – Operational deployment</li>
               <li><time dateTime="2022">2022-2024</time> – Command, 280 soldiers, $250 M equipment</li>
-              <li><time dateTime="2025">April 2025</time> – Summer Associate, Context VC</li>
-              <li><time dateTime="2025">August 2025</time> – MBA candidate, Berkeley Haas</li>
+              <li><time dateTime="2025">2025</time> – Summer Associate, Context VC</li>
+              <li><time dateTime="2025">2025</time> – MBA candidate, Berkeley Haas</li>
             </ul>
             <p><strong>$250 Million in assets managed</strong>, <strong>0 losses</strong>. Trained <strong>thousands</strong> of soldiers.</p>
           </div>
