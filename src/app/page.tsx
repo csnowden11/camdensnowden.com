@@ -5,7 +5,6 @@ import Image from 'next/image';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -23,7 +22,6 @@ export default function Home() {
         imgs.forEach((img, n) => {
           img.style.transform = `translateX(${100 * (n - newIdx)}%)`;
         });
-        setCurrentSlide(newIdx);
       };
 
       const interval = setInterval(() => {
@@ -185,7 +183,7 @@ export default function Home() {
           </div>
           <div className="col-6">
             <p>
-              Hi, I'm Camden Snowden—Colorado native, husband, father of Charlie and Everett, and West Point graduate (B.S. Economics, magna cum laude). After 12 years leading Army intelligence teams across two overseas tours and one operational deployment to Poland, I'm channeling my strategic-intelligence expertise into venture and real-estate innovation while pursuing my MBA at Berkeley Haas.
+              Hi, I&apos;m Camden Snowden—Colorado native, husband, father of Charlie and Everett, and West Point graduate (B.S. Economics, magna cum laude). After 12 years leading Army intelligence teams across two overseas tours and one operational deployment to Poland, I&apos;m channeling my strategic-intelligence expertise into venture and real-estate innovation while pursuing my MBA at Berkeley Haas.
             </p>
             <ul>
               <li><strong>Years in service:</strong> 12</li>
