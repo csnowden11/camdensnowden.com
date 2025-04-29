@@ -123,7 +123,6 @@ export default function Home() {
             <li><a href="#career">Career&nbsp;Timeline</a></li>
             <li><a href="#outside">Outside&nbsp;of&nbsp;Work</a></li>
             <li><a href="#thoughts">Thoughts</a></li>
-            <li><a href="#things-i-like">Things&nbsp;I&nbsp;Like</a></li>
             <li><a href="#blog">Personal&nbsp;Blog</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -266,30 +265,11 @@ export default function Home() {
               <ul>
                 <li><a href="https://www.hubermanlab.com/" target="_blank" rel="noopener noreferrer">Huberman Lab</a></li>
                 <li><a href="https://tim.blog/podcast/" target="_blank" rel="noopener noreferrer">The Tim Ferriss Show</a></li>
+                <li><a href="https://www.searchengine.show/" target="_blank" rel="noopener noreferrer">Search Engine</a></li>
+                <li><a href="https://www.chrishutchins.com/" target="_blank" rel="noopener noreferrer">All the Hacks</a></li>
+                <li><a href="https://www.churninglife.com/" target="_blank" rel="noopener noreferrer">Churning Life</a></li>
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Things I Like Section */}
-      <section id="things-i-like" className="container fade-in">
-        <h2>Things I Like</h2>
-        <div className="things-grid">
-          <div className="thing-card">
-            <h3>Search Engine</h3>
-            <p>A podcast that answers the questions that keep you up at night.</p>
-            <a href="https://www.searchengine.show/" target="_blank" rel="noopener noreferrer" className="btn">Listen Here</a>
-          </div>
-          <div className="thing-card">
-            <h3>All the Hacks</h3>
-            <p>Upgrade your life, money, and travel with Chris Hutchins.</p>
-            <a href="https://www.chrishutchins.com/" target="_blank" rel="noopener noreferrer" className="btn">Listen Here</a>
-          </div>
-          <div className="thing-card">
-            <h3>Churning Life</h3>
-            <p>Learn about credit cards, buying groups, and maximizing rewards.</p>
-            <a href="https://www.churninglife.com/" target="_blank" rel="noopener noreferrer" className="btn">Listen Here</a>
           </div>
         </div>
       </section>
@@ -347,7 +327,6 @@ export default function Home() {
                 <li><a href="#career">Career</a></li>
                 <li><a href="#outside">Outside of Work</a></li>
                 <li><a href="#thoughts">Thoughts</a></li>
-                <li><a href="#things-i-like">Things I Like</a></li>
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
               </ul>
