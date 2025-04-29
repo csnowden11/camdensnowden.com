@@ -181,11 +181,10 @@ export default function Home() {
             className="hero-image"
             style={{ transform: 'translateX(300%)', objectFit: 'cover' }}
           />
-          <div className="overlay">
-            <h1>From the Long Gray Line to the Bottom Line™</h1>
-            <h2>Decorated Army Officer Turning Business Leader</h2>
-            <a href="#about" className="btn">Learn More</a>
-          </div>
+        </div>
+        <div className="overlay">
+          <h1>From the Long Gray Line to the Bottom Line™</h1>
+          <h2>Decorated Army Officer Turning Business Leader</h2>
         </div>
       </section>
 
@@ -262,7 +261,7 @@ export default function Home() {
             <div className="thought-card">
               <h3>Books</h3>
               <ul>
-                <li><a href="https://yalebooks.yale.edu/book/9780300168644/pioneering-portfolio-management/" target="_blank" rel="noopener noreferrer">Pioneering Portfolio Management - David Swensen</a></li>
+                <li><a href="https://www.amazon.com/Pioneering-Portfolio-Management-David-Swensen/dp/0300168640" target="_blank" rel="noopener noreferrer">Pioneering Portfolio Management - David Swensen</a></li>
                 <li><a href="https://www.amazon.com/Lean-Startup-Entrepreneurs-Continuous-Innovation/dp/0307887898" target="_blank" rel="noopener noreferrer">The Lean Startup - Eric Ries</a></li>
               </ul>
             </div>
@@ -292,8 +291,8 @@ export default function Home() {
           <div className="row">
             <div className="col-4 post-card">
               <h3>Lessons I Want to Teach My Kids</h3>
-              <p>A collection of life lessons and wisdom I've gathered throughout my journey as a parent, military officer, and business leader.</p>
-              <a href="https://gamma.app/docs/Lessons-I-want-to-teach-my-kids-ji8jjx187ujsvhy" className="btn" target="_blank" rel="noopener noreferrer">Read Article</a>
+              <p>Twelve core life lessons for future happiness and success. A collection of personal stories, research, and real-world wisdom to help guide the next generation.</p>
+              <a href="https://lessons-i-want-to-teach--e3ko3ra.gamma.site/" className="btn" target="_blank" rel="noopener noreferrer">Read Article</a>
             </div>
           </div>
         </div>
@@ -303,7 +302,7 @@ export default function Home() {
       <section id="contact" className="container fade-in">
         <h2>Contact</h2>
         <div className="contact-content">
-          <p>Email: <a href="mailto:camden.snowden@contextvc.com">camden.snowden@contextvc.com</a></p>
+          <p>Email: <a href="mailto:camdensnowden@gmail.com">camdensnowden@gmail.com</a></p>
           <p className="social">
             <a href="https://linkedin.com/in/camden-snowden">LinkedIn</a>
           </p>

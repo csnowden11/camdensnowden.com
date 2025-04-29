@@ -78,6 +78,7 @@ body {
 
 .btn:hover {
   background: #0056b3;
+  color: #fff;
 }
 
 .fade-in {
