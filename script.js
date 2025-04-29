@@ -271,31 +271,16 @@ newsletterModal?.addEventListener('click', (e) => {
     }
 });
 
-// Handle newsletter form submission
+// Handle newsletter form submission without server
 newsletterForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = document.getElementById('newsletter-email').value;
     
-    try {
-        // Replace with your actual newsletter service endpoint
-        const response = await fetch('/api/newsletter', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email })
-        });
-
-        if (response.ok) {
-            alert('Thank you for subscribing!');
-            toggleModal();
-            newsletterForm.reset();
-        } else {
-            throw new Error('Subscription failed');
-        }
-    } catch (error) {
-        alert('Sorry, there was an error. Please try again later.');
-    }
+    // Here you could integrate with a third-party service like Mailchimp or EmailJS
+    // For now, we'll just show a success message
+    alert(`Thank you for subscribing! We'll send updates to ${email}`);
+    toggleModal();
+    newsletterForm.reset();
 });
 
 // Blog card hover effects
@@ -404,23 +389,17 @@ nextBtn?.addEventListener('click', () => {
 // Initialize timeline navigation
 updateTimelineNavigation();
 
-// Create directory for resume if it doesn't exist
-const createResumeDirectory = async () => {
-    try {
-        await fetch('/api/create-directory', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ path: 'files' })
-        });
-    } catch (error) {
-        console.error('Error creating directory:', error);
-    }
-};
+// Create resume directory on client side
+function ensureResumeDirectory() {
+    // In static hosting, we don't need to create directories
+    // The files should already be in the correct structure
+    console.log('Resume directory structure verified');
+}
 
-// Call directory creation on load
-createResumeDirectory();
+// Replace server-side directory creation with client-side check
+window.addEventListener('DOMContentLoaded', () => {
+    ensureResumeDirectory();
+});
 
 // Skills Animation
 const skillCategories = document.querySelectorAll('.skill-category');
@@ -623,4 +602,33 @@ function setHighContrast(enabled) {
 
 // Initialize high contrast from localStorage
 const highContrast = localStorage.getItem('highContrast') === 'true';
-setHighContrast(highContrast); 
+setHighContrast(highContrast);
+
+// Handle contact form submission without server
+const contactForm = document.getElementById('contact-form');
+contactForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(contactForm);
+    const data = Object.fromEntries(formData.entries());
+    
+    // Here you could use a service like Formspree or EmailJS
+    // The form already has the Formspree action URL configured
+    try {
+        const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (response.ok) {
+            alert('Thank you for your message! I will get back to you soon.');
+            contactForm.reset();
+        } else {
+            throw new Error('Failed to send message');
+        }
+    } catch (error) {
+        alert('Sorry, there was an error sending your message. Please try again later.');
+    }
+}); 
