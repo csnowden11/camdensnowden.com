@@ -290,12 +290,9 @@ export default function Home() {
           <h2>Personal Blog</h2>
           <div className="row">
             <div className="col-4 post-card">
-              <h3>Life Lessons for My Sons</h3>
+              <h3>Life Lessons for My Sons <span className="date">29 Apr 2025</span></h3>
               <p>Wisdom and guidance for Charlie and Everett's journey through life.</p>
-              <div className="button-group">
-                <a href="https://life-lessons-sons-gsj2i5x.gamma.site/" className="btn" target="_blank" rel="noopener noreferrer">Read Article</a>
-                <a href="#overview" className="btn" onClick={scrollToSection}>Back to Main</a>
-              </div>
+              <a href="/blog" className="btn">Read Article</a>
             </div>
           </div>
         </div>
