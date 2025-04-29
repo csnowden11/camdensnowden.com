@@ -568,4 +568,176 @@ contactForm?.addEventListener('submit', async (e) => {
     } catch (error) {
         alert('Sorry, there was an error sending your message. Please try again later.');
     }
+});
+
+// Image error handling
+function handleImageError(img) {
+    img.onerror = null; // Prevent infinite loop
+    img.src = 'https://via.placeholder.com/400x300?text=Image+Coming+Soon';
+    img.classList.add('placeholder-image');
+}
+
+// Add error handling to all images
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('error', () => handleImageError(img));
+    });
+});
+
+// Career milestones data
+const careerMilestones = [
+    {
+        date: '2025',
+        title: 'MBA Candidate at Berkeley Haas',
+        description: 'Transitioned from active duty military service to pursue an MBA at UC Berkeley\'s Haas School of Business, focusing on leadership and business innovation.',
+        image: 'images/berkeley-haas.jpg',
+        tags: ['MBA', 'Business Strategy', 'Leadership', 'Career Transition']
+    },
+    {
+        date: '2020-2025',
+        title: 'Military Intelligence Officer',
+        description: 'Transitioned to Military Intelligence branch, leading intelligence operations and strategic planning initiatives. Applied analytical expertise to complex military operations.',
+        image: 'images/military-intel.jpg',
+        tags: ['Military Intelligence', 'Strategic Planning', 'Leadership', 'Analytics']
+    },
+    {
+        date: '2016-2020',
+        title: 'Infantry Officer',
+        description: 'Commissioned as a Second Lieutenant in the Infantry branch of the U.S. Army. Led and trained infantry units, developing core leadership skills and tactical expertise.',
+        image: 'images/infantry-service.jpg',
+        tags: ['Infantry', 'Combat Leadership', 'Team Management', 'Tactical Operations']
+    },
+    {
+        date: '2016',
+        title: 'United States Military Academy',
+        description: 'Graduated from West Point, earning a Bachelor\'s degree and commission as an Army Officer. Developed foundational leadership skills and military expertise.',
+        image: 'images/westpoint.jpg',
+        tags: ['West Point', 'Military Education', 'Leadership Development']
+    }
+];
+
+// Update image configuration to match career progression
+const imageConfig = {
+    profile: {
+        main: 'images/profile-professional.jpg', // Professional headshot
+        action: 'images/military-leadership.jpg' // Military leadership image
+    },
+    gallery: [
+        {
+            src: 'images/infantry-group.jpg',
+            alt: 'Infantry Service',
+            caption: 'Leading Infantry operations'
+        },
+        {
+            src: 'images/military-intel.jpg',
+            alt: 'Military Intelligence',
+            caption: 'Military Intelligence operations'
+        },
+        {
+            src: 'images/westpoint-grad.jpg',
+            alt: 'West Point Graduation',
+            caption: 'Graduating from West Point'
+        },
+        {
+            src: 'images/berkeley-campus.jpg',
+            alt: 'Berkeley Haas',
+            caption: 'Starting new chapter at Berkeley Haas'
+        }
+    ],
+    personal: [
+        {
+            src: 'images/fishing.jpg',
+            alt: 'Spearfishing',
+            caption: 'Adventure on the water'
+        },
+        {
+            src: 'images/skiing.jpg',
+            alt: 'Skiing',
+            caption: 'Winter sports enthusiasm'
+        },
+        {
+            src: 'images/family.jpg',
+            alt: 'Family Time',
+            caption: 'Family moments'
+        }
+    ]
+};
+
+// Function to load and handle images
+function loadImages() {
+    // Profile section
+    const profileImages = document.querySelectorAll('.profile-image');
+    profileImages.forEach(img => {
+        if (img.classList.contains('main')) {
+            img.src = imageConfig.profile.main;
+        } else if (img.classList.contains('action')) {
+            img.src = imageConfig.profile.action;
+        }
+    });
+
+    // Gallery section
+    const galleryContainer = document.querySelector('.journey-gallery .gallery-grid');
+    if (galleryContainer) {
+        galleryContainer.innerHTML = imageConfig.gallery.map(image => `
+            <div class="gallery-item fade-in">
+                <img src="${image.src}" alt="${image.alt}" loading="lazy">
+                <div class="gallery-caption">${image.caption}</div>
+            </div>
+        `).join('');
+    }
+
+    // Personal section
+    const personalContainer = document.querySelector('.personal-grid');
+    if (personalContainer) {
+        personalContainer.innerHTML = imageConfig.personal.map(image => `
+            <div class="personal-card fade-in">
+                <img src="${image.src}" alt="${image.alt}" loading="lazy">
+                <h3>${image.caption}</h3>
+            </div>
+        `).join('');
+    }
+
+    // Add error handling to all images
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('error', () => handleImageError(img));
+    });
+}
+
+// Function to render career timeline
+function renderCareerTimeline() {
+    const timeline = document.querySelector('.timeline');
+    if (!timeline) return;
+
+    const timelineHTML = careerMilestones.map(milestone => `
+        <div class="timeline-item fade-in">
+            <div class="timeline-content">
+                <div class="timeline-date">${milestone.date}</div>
+                <div class="timeline-marker"></div>
+                <div class="timeline-info">
+                    <div class="timeline-image">
+                        <img src="${milestone.image}" alt="${milestone.title}" loading="lazy">
+                    </div>
+                    <h3>${milestone.title}</h3>
+                    <p>${milestone.description}</p>
+                    <div class="timeline-tags">
+                        ${milestone.tags.map(tag => `<span>${tag}</span>`).join('')}
+                    </div>
+                </div>
+            </div>
+        </div>
+    `).join('');
+
+    timeline.innerHTML = timelineHTML;
+    
+    // Observe new timeline items
+    document.querySelectorAll('.timeline-item').forEach(item => {
+        observer.observe(item);
+    });
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    loadImages();
+    renderCareerTimeline();
+    // ... existing DOMContentLoaded code ...
 }); 
