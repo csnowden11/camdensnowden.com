@@ -7,6 +7,11 @@ export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const carouselRef = useRef<HTMLDivElement>(null);
 
+  // Toggle menu function
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   useEffect(() => {
     // Initialize carousel
     const initCarousel = () => {
@@ -103,16 +108,15 @@ export default function Home() {
             aria-controls="main-menu"
             aria-expanded={isMenuOpen}
             aria-label="Toggle navigation"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={toggleMenu}
           >
             ☰
           </button>
 
           <ul
             id="main-menu"
-            className="nav-links"
+            className={`nav-links ${isMenuOpen ? 'open' : ''}`}
             role="navigation"
-            hidden={!isMenuOpen}
           >
             <li><a href="#overview">Overview</a></li>
             <li><a href="#about">About</a></li>
@@ -165,7 +169,7 @@ export default function Home() {
           />
           <div className="overlay">
             <h1>From the Long Gray Line to the Bottom Line™</h1>
-            <h2>Decorated Army Intelligence Officer turning business builder</h2>
+            <h2>Decorated Army Officer Turning Business Leader</h2>
             <a href="#about" className="btn">Learn More</a>
           </div>
         </div>
@@ -202,12 +206,12 @@ export default function Home() {
           <div className="col-6">
             <h2>Career Highlights</h2>
             <ul>
-              <li><time dateTime="2013">2013</time> – Commissioned from West Point</li>
-              <li><time dateTime="2016">2016-2018</time> – Intel Platoon Leader, Europe (Tour 1)</li>
-              <li><time dateTime="2019">2019</time> – Command, 280 soldiers, $250 M equipment</li>
-              <li><time dateTime="2021">2021</time> – Operational deployment, Poland</li>
-              <li><time dateTime="2024">2024-2025</time> – Associate, Context VC</li>
-              <li><time dateTime="2025">2025</time> – MBA candidate, Berkeley Haas</li>
+              <li><time dateTime="2016">2016</time> – Commissioned from West Point</li>
+              <li><time dateTime="2016">2016-2020</time> – Infantry Officer</li>
+              <li><time dateTime="2017">2017</time> – Operational deployment</li>
+              <li><time dateTime="2022">2022-2024</time> – Command, 280 soldiers, $250 M equipment</li>
+              <li><time dateTime="2025">April 2025</time> – Summer Associate, Context VC</li>
+              <li><time dateTime="2025">August 2025</time> – MBA candidate, Berkeley Haas</li>
             </ul>
             <p><strong>$250 M</strong> in assets, <strong>0 losses</strong>. Trained <strong>thousands</strong> of soldiers.</p>
           </div>
@@ -274,11 +278,7 @@ export default function Home() {
         </form>
         <p>Or email directly: <a href="mailto:camden.snowden@contextvc.com">camden.snowden@contextvc.com</a></p>
         <p className="social">
-          <a href="https://linkedin.com/in/camden-snowden">LinkedIn</a> ·
-          <a href="https://twitter.com/camden_snowden">X/Twitter</a> ·
-          <a href="https://github.com/csnowden11">GitHub</a> ·
-          <a href="https://instagram.com/camden.snowden">Instagram</a> ·
-          <a href="https://youtube.com/@camden-snowden">YouTube</a>
+          <a href="https://linkedin.com/in/camden-snowden">LinkedIn</a>
         </p>
       </section>
 
