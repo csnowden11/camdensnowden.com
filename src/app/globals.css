@@ -455,12 +455,16 @@ img {
     width: 100%;
     max-width: 100%;
     margin: 0;
-    text-align: center;
+    text-align: left;
   }
 
   section {
     width: 100%;
     padding: 32px 0;
+    text-align: left;
+  }
+
+  section h2 {
     text-align: center;
   }
 
@@ -468,13 +472,13 @@ img {
     margin: 0;
     width: 100%;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
 
   [class*="col-"] {
     padding: 8px 0;
     width: 100%;
-    text-align: center;
+    text-align: left;
   }
 
   /* Hero section mobile */
@@ -513,12 +517,12 @@ img {
   }
 
   .col-6 p, .col-6 ul {
-    text-align: center;
+    text-align: left;
   }
 
   .col-6 ul {
-    list-style-position: inside;
-    padding-left: 0;
+    list-style-position: outside;
+    padding-left: 1rem;
   }
 
   /* Career section mobile */
@@ -530,9 +534,9 @@ img {
   }
 
   #career ul {
-    text-align: center;
-    list-style-position: inside;
-    padding-left: 0;
+    text-align: left;
+    list-style-position: outside;
+    padding-left: 1rem;
   }
 
   /* Thoughts and Things sections mobile */
@@ -550,30 +554,43 @@ img {
     width: 100%;
     box-sizing: border-box;
     margin: 0;
+    text-align: left;
+  }
+
+  .thought-card h3,
+  .thing-card h3 {
     text-align: center;
   }
 
   .thought-card ul,
   .thing-card ul {
-    list-style-position: inside;
-    padding-left: 0;
-    text-align: center;
+    list-style-position: outside;
+    padding-left: 1rem;
+    text-align: left;
   }
 
   /* Contact section mobile */
   .contact-content {
-    text-align: center;
+    text-align: left;
     padding: 1rem 0;
+  }
+
+  .contact-content h2 {
+    text-align: center;
   }
 
   .contact-content p {
     font-size: 1rem;
-    text-align: center;
+    text-align: left;
   }
 
   /* Outside of Work section */
-  #outside p {
+  #outside h2 {
     text-align: center;
+  }
+
+  #outside p {
+    text-align: left;
   }
 }
 

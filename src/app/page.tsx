@@ -276,8 +276,6 @@ export default function Home() {
             <div className="thought-card">
               <h3>Podcasts</h3>
               <ul>
-                <li><a href="https://www.hubermanlab.com/" target="_blank" rel="noopener noreferrer">Huberman Lab</a></li>
-                <li><a href="https://tim.blog/podcast/" target="_blank" rel="noopener noreferrer">The Tim Ferriss Show</a></li>
                 <li><a href="https://www.searchengine.show/" target="_blank" rel="noopener noreferrer">Search Engine</a></li>
                 <li><a href="https://www.chrishutchins.com/" target="_blank" rel="noopener noreferrer">All the Hacks</a></li>
                 <li><a href="https://www.churninglife.com/" target="_blank" rel="noopener noreferrer">Churning Life</a></li>
