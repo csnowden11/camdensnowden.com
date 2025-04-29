@@ -1,0 +1,272 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --txt: #000;
+  --bg: #fff;
+  --sec: #F5F5F7;
+  --accent: #0071E3;
+  --radius: 8px;
+  --shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
+html {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 1.45;
+  color: var(--txt);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 12-column flex grid – 1 column on phones */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+[class*="col-"] {
+  flex: 1 0 100%;
+  padding: 12px;
+}
+
+@media (min-width: 600px) {
+  .col-6 {
+    flex: 0 0 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-4 {
+    flex: 0 0 33.333%;
+  }
+  .col-8 {
+    flex: 0 0 66.666%;
+  }
+}
+
+/* Utility classes */
+.btn {
+  background: var(--accent);
+  color: #fff;
+  padding: 14px 28px;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: .4s ease-out;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Header / Navigation */
+header {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--txt);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 24px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--txt);
+  font-weight: 500;
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--txt);
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+  }
+  .hamburger {
+    display: none;
+  }
+}
+
+/* Hero Carousel */
+#hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+}
+
+#hero .overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--bg);
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: var(--radius);
+  max-width: 800px;
+  width: 90%;
+}
+
+#hero h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin: 0 0 1rem;
+  line-height: 1.2;
+}
+
+#hero h2 {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  margin: 0 0 2rem;
+  font-weight: 400;
+}
+
+#hero .btn {
+  background: var(--accent);
+  color: var(--bg);
+  padding: 1rem 2rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+#hero .btn:hover {
+  background: var(--accent-dark);
+}
+
+/* Section backgrounds & spacing */
+section {
+  padding: 72px 0;
+}
+
+.alt {
+  background: var(--sec);
+}
+
+/* Blog cards */
+.post-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+}
+
+.post-card h3 {
+  margin-top: 0;
+}
+
+.post-card a {
+  margin-top: auto;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Contact Form */
+form {
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+form button {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.social {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.social a {
+  color: var(--accent);
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.social a:hover {
+  text-decoration: underline;
+}

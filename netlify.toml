@@ -1,51 +1,8 @@
 [build]
-  publish = "dist"
   command = "npm run build"
-
-[build.environment]
-  NODE_VERSION = "18"
-  NPM_VERSION = "9"
-
-[[plugins]]
-  package = "@netlify/plugin-image-optim"
+  publish = "out"
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
-  status = 200
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://maps.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://maps.googleapis.com;"
-    Cache-Control = "public, max-age=31536000, immutable"
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
-
-[[headers]]
-  for = "/*.html"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-
-[[headers]]
-  for = "/*.css"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.js"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/images/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/fonts/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable" 
+  status = 200 
