@@ -246,9 +246,8 @@ export default function Home() {
           <h2>Personal Blog</h2>
           <div className="row">
             <div className="col-4 post-card">
-              <h3>Why Predictive Logistics Matter</h3>
-              <p>Strategic-intelligence lessons for modern supply chains …</p>
-              <a href="/posts/predictive-logistics.html">Read post →</a>
+              <h3>Coming Soon</h3>
+              <p>Stay tuned for insights on leadership, military-to-civilian transition, and business strategy.</p>
             </div>
           </div>
         </div>
