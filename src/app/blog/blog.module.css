@@ -1,0 +1,75 @@
+.blogContainer {
+  background-color: white;
+  color: black;
+  padding: 2rem;
+}
+
+.blogTitle {
+  color: black;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.blogSubtitle {
+  color: black;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.blogContent {
+  color: black;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.blogContent h1,
+.blogContent h2,
+.blogContent h3,
+.blogContent p {
+  color: black;
+}
+
+.stats {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.stat {
+  flex: 1;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.lessonContent {
+  margin: 2rem 0;
+}
+
+.lessonPoint {
+  margin-bottom: 1.5rem;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .blogContainer {
+    padding: 1rem;
+  }
+  
+  .blogTitle {
+    font-size: 2rem;
+  }
+  
+  .blogSubtitle {
+    font-size: 1.2rem;
+  }
+  
+  .stats {
+    flex-direction: column;
+  }
+} 
