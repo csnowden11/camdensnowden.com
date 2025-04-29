@@ -4,7 +4,10 @@
   "description": "Camden Snowden's personal portfolio website",
   "scripts": {
     "start": "npx http-server .",
-    "build": "echo 'No build step required'"
+    "prebuild": "echo 'Preparing build...'",
+    "build": "echo 'Building site...' && mkdir -p $NETLIFY_BUILD_BASE && cp -r ./* $NETLIFY_BUILD_BASE/",
+    "clean": "rm -rf node_modules",
+    "optimize": "bash optimize_images.sh"
   },
   "dependencies": {
     "http-server": "^14.1.1"
