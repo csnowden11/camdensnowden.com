@@ -273,7 +273,7 @@ export default function Home() {
               </ul>
             </div>
             <div className="thought-card">
-              <h3>Podcasts</h3>
+              <h3>My Favorite Podcasts</h3>
               <ul>
                 <li><a href="https://www.searchengine.show/" target="_blank" rel="noopener noreferrer">Search Engine</a></li>
                 <li><a href="https://www.chrishutchins.com/" target="_blank" rel="noopener noreferrer">All the Hacks</a></li>
