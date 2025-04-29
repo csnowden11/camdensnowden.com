@@ -11,15 +11,21 @@ const debounce = (func, wait) => {
     };
 };
 
-// Mobile menu functionality with improved animations
+// Mobile menu functionality with improved animations and touch handling
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
 const navbar = document.querySelector('.navbar');
 
-mobileMenuBtn.addEventListener('click', () => {
+// Toggle mobile menu
+const toggleMobileMenu = () => {
     mobileMenuBtn.classList.toggle('active');
     navLinks.classList.toggle('active');
     document.body.classList.toggle('menu-open');
+};
+
+mobileMenuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMobileMenu();
 });
 
 // Close mobile menu when clicking outside
@@ -27,32 +33,55 @@ document.addEventListener('click', (e) => {
     if (navLinks.classList.contains('active') && 
         !navLinks.contains(e.target) && 
         !mobileMenuBtn.contains(e.target)) {
-        mobileMenuBtn.classList.remove('active');
-        navLinks.classList.remove('active');
-        document.body.classList.remove('menu-open');
+        toggleMobileMenu();
     }
 });
 
-// Enhanced smooth scrolling with offset calculation
+// Handle touch events for mobile menu
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+});
+
+document.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipeGesture();
+});
+
+const handleSwipeGesture = () => {
+    const swipeThreshold = 50;
+    const swipeDistance = touchEndX - touchStartX;
+    
+    if (navLinks.classList.contains('active') && swipeDistance > swipeThreshold) {
+        // Swipe right to close menu
+        toggleMobileMenu();
+    } else if (!navLinks.classList.contains('active') && swipeDistance < -swipeThreshold) {
+        // Swipe left to open menu
+        toggleMobileMenu();
+    }
+};
+
+// Enhanced smooth scrolling with mobile menu handling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const navbarHeight = navbar.offsetHeight;
-            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-            const offsetPosition = targetPosition - navbarHeight;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-
-            // Close mobile menu if open
-            mobileMenuBtn.classList.remove('active');
-            navLinks.classList.remove('active');
-            document.body.classList.remove('menu-open');
+        
+        // Close mobile menu if open
+        if (navLinks.classList.contains('active')) {
+            toggleMobileMenu();
         }
+        
+        const target = document.querySelector(this.getAttribute('href'));
+        const headerOffset = 80;
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
     });
 });
 
@@ -130,9 +159,23 @@ if (hero) {
 
 // Initialize on DOM load
 document.addEventListener('DOMContentLoaded', () => {
-    // Trigger initial scroll check
     handleScroll();
-    
-    // Add smooth appearance to initial view
     document.body.classList.add('loaded');
+});
+
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 50) {
+        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+    } else {
+        navbar.style.boxShadow = 'none';
+    }
+});
+
+// Close mobile menu when clicking a link
+navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    });
 }); 

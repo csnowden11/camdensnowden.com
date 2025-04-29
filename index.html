@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Camden Snowden - Army Officer & Future Berkeley Haas MBA Candidate">
-    <title>Camden Snowden - Army Officer | Berkeley Haas MBA</title>
+    <title>Camden Snowden - Professional Portfolio</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
@@ -14,6 +14,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -22,30 +25,33 @@
     <nav class="navbar">
         <div class="navbar-content">
             <a href="#" class="logo">CS</a>
-            <button class="mobile-menu-btn" aria-label="Toggle menu">
+            <button class="mobile-menu-btn">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#education">Education</a>
-                <a href="#experience">Experience</a>
-                <a href="#contact">Contact</a>
-            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#blog">My Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="hero">
+    <section class="hero">
         <div class="hero-content">
-            <img src="images/profile.jpg" alt="Camden Snowden" class="profile-image animate-on-scroll">
-            <h1 class="animate-on-scroll">Camden Snowden</h1>
-            <p class="subtitle animate-on-scroll">Army Officer & Future Berkeley Haas MBA Candidate</p>
-            <p class="motivational-quote animate-on-scroll">"Hard Work Beats Talent"</p>
-            <div class="cta-buttons animate-on-scroll">
-                <a href="#experience" class="button button-primary">View Experience</a>
-                <a href="#contact" class="button button-secondary">Get in Touch</a>
+            <img src="images/profile.jpeg" alt="Camden Snowden" class="profile-image fade-in">
+            <h1 class="fade-in">Camden Snowden</h1>
+            <p class="subtitle fade-in">Business Leader & Strategic Innovator</p>
+            <div class="motivational-quote fade-in">
+                "Driving Innovation Through Strategic Leadership"
+            </div>
+            <div class="button-group">
+                <a href="#contact" class="button button-primary">Get in Touch</a>
+                <a href="#about" class="button button-secondary">Learn More</a>
             </div>
         </div>
     </section>
@@ -68,20 +74,18 @@
         <div class="container">
             <h2 class="animate-on-scroll">Education</h2>
             <div class="grid">
-                <div class="education-card animate-on-scroll">
-                    <img src="images/berkeley-haas.jpg" alt="Berkeley Haas School of Business" class="education-image">
+                <div class="education-card fade-in">
+                    <img src="images/berkeley-haas.jpeg" alt="UC Berkeley Haas School of Business" class="education-image">
                     <div class="education-content">
-                        <h3 class="education-title">UC Berkeley, Haas School of Business</h3>
-                        <p>MBA Candidate '27</p>
-                        <p>Focus: Innovation, Entrepreneurship, and Sustainable Business</p>
+                        <h3 class="education-title">UC Berkeley Haas School of Business</h3>
+                        <p>Master of Business Administration</p>
                     </div>
                 </div>
-                <div class="education-card animate-on-scroll">
-                    <img src="images/westpoint.jpg" alt="United States Military Academy at West Point" class="education-image">
+                <div class="education-card fade-in">
+                    <img src="images/westpoint.png" alt="United States Military Academy at West Point" class="education-image">
                     <div class="education-content">
                         <h3 class="education-title">United States Military Academy</h3>
-                        <p>Bachelor of Science in Economics '16</p>
-                        <p>Focus: Leadership Development, Strategic Management</p>
+                        <p>Bachelor of Science</p>
                     </div>
                 </div>
             </div>
@@ -91,37 +95,39 @@
     <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
-            <h2 class="animate-on-scroll">Military Experience</h2>
+            <h2 class="animate-on-scroll">Professional Experience</h2>
             <div class="grid">
-                <div class="card animate-on-scroll">
-                    <h3>Company Commander</h3>
-                    <p>U.S. Army - Fort Huachuca, AZ</p>
-                    <p>2022 - Present</p>
+                <div class="card fade-in">
+                    <h3>Leadership Experience</h3>
                     <ul>
-                        <li>Led two successful company commands</li>
-                        <li>Managed operations and training for large military units</li>
-                        <li>Developed and implemented strategic initiatives</li>
+                        <li>Strategic planning and execution</li>
+                        <li>Team leadership and development</li>
+                        <li>Project management and optimization</li>
                     </ul>
                 </div>
-                <div class="card animate-on-scroll">
-                    <h3>Military Intelligence Officer</h3>
-                    <p>U.S. Army - Camp Humphreys, South Korea</p>
-                    <p>2020 - 2022</p>
+                <div class="card fade-in">
+                    <h3>Military Service</h3>
                     <ul>
-                        <li>Led intelligence analysts in producing actionable intelligence</li>
-                        <li>Coordinated cross-functional teams</li>
-                        <li>Managed complex data analysis systems</li>
+                        <li>Decorated military officer</li>
+                        <li>Strategic operations management</li>
+                        <li>Cross-functional team leadership</li>
                     </ul>
                 </div>
-                <div class="card animate-on-scroll">
-                    <h3>Rifle and Scout Platoon Leader</h3>
-                    <p>U.S. Army - Germany (2CR)</p>
-                    <p>2016 - 2020</p>
-                    <ul>
-                        <li>Led diverse teams across Europe</li>
-                        <li>Planned and executed complex military operations</li>
-                        <li>Developed innovative training programs</li>
-                    </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="animate-on-scroll">My Blog</h2>
+            <div class="card fade-in">
+                <div class="blog-content">
+                    <h3>Coming Soon</h3>
+                    <p>I'm working on sharing my thoughts and experiences through a blog. Stay tuned for insights on leadership, innovation, and the intersection of military and business principles.</p>
+                    <div class="button-group">
+                        <a href="#contact" class="button button-secondary">Get Notified When Live</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -131,14 +137,14 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="animate-on-scroll">Get in Touch</h2>
-            <div class="contact-content">
-                <div class="contact-text animate-on-scroll">
-                    <p>I'm always interested in connecting with fellow professionals and discussing opportunities in leadership and innovation.</p>
-                </div>
-                <div class="social-links animate-on-scroll">
-                    <a href="https://www.linkedin.com/in/camden-snowden/" target="_blank" class="button button-primary">
-                        <i class="fab fa-linkedin"></i>
-                        Connect on LinkedIn
+            <div class="card fade-in">
+                <p>I'm always open to discussing new opportunities and challenges.</p>
+                <div class="button-group">
+                    <a href="https://www.linkedin.com/in/camden-snowden/" class="button button-primary">
+                        <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                    </a>
+                    <a href="mailto:camdensnowden@gmail.com" class="button button-secondary">
+                        <i class="far fa-envelope"></i> Email Me
                     </a>
                 </div>
             </div>
@@ -147,17 +153,44 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2024 Camden Snowden. All rights reserved.</p>
-            </div>
+        <div class="footer-content">
+            <p>&copy; 2025 Camden Snowden. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Font Awesome for icons -->
-    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
-    
     <!-- Main JavaScript -->
-    <script src="script.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
 </body>
 </html> 

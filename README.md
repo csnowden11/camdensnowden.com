@@ -1,37 +1,64 @@
-# Camden Snowden - Personal Website
+# Camden Snowden - Professional Portfolio
 
-This is my personal website showcasing my journey from West Point to Berkeley Haas, and my experience as an Army Officer.
+A modern, responsive professional portfolio website showcasing Camden Snowden's experience, education, and achievements.
 
 ## Features
-- Responsive design
-- Modern animations
+
+- Responsive design that works on all devices
+- Smooth scrolling navigation
+- Modern animations and transitions
+- Professional layout with Berkeley and West Point branding colors
 - Mobile-friendly navigation
-- Professional portfolio layout
+- Optimized images and performance
 
 ## Technologies Used
+
 - HTML5
-- CSS3
-- JavaScript
+- CSS3 (with custom properties and modern features)
+- JavaScript (ES6+)
+- Intersection Observer API for scroll animations
 - Font Awesome for icons
 
-## Setup
-1. Clone the repository
-2. Open index.html in your browser
+## Structure
 
-## Contact
-Connect with me on [LinkedIn](https://www.linkedin.com/in/camden-snowden/)
+```
+website/
+├── index.html
+├── styles.css
+├── script.js
+├── images/
+│   ├── profile.jpg
+│   ├── berkeley-haas.jpg
+│   └── westpoint.jpg
+└── README.md
+```
+
+## Setup
+
+1. Clone the repository
+2. Open `index.html` in a modern web browser
+3. No build process required - simple static site
 
 ## Development
 
-To run the website locally:
+To make changes:
+1. Edit HTML in `index.html`
+2. Modify styles in `styles.css`
+3. Update JavaScript functionality in `script.js`
 
-1. Clone the repository
-2. Open `index.html` in your browser
-3. For live reload functionality, use the included development server:
-   ```bash
-   npm install
-   npm start
-   ```
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## Copyright
+
+© 2025 Camden Snowden. All rights reserved.
+
+## Contact
+Connect with me on [LinkedIn](https://www.linkedin.com/in/camden-snowden/)
 
 ## Deployment
 
