@@ -236,7 +236,7 @@ export default function Blog() {
               </p>
 
               <div className="button-group">
-                <a href="https://life-lessons-sons-gsj2i5x.gamma.site/" className="btn" target="_blank" rel="noopener noreferrer">Read Full Article</a>
+                <a href="https://gamma.app/docs/Life-Lessons-for-My-Sons-What-I-Hope-Charlie-and-Everett-Will-Alw-rb0ozevkkoepgil?mode=doc" className="btn" target="_blank" rel="noopener noreferrer">Read Full Article</a>
                 <Link href="/" className="btn">Back to Main</Link>
               </div>
             </div>
