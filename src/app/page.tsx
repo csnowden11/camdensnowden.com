@@ -259,14 +259,14 @@ export default function Home() {
           <h2>Thoughts</h2>
           <div className="thoughts-grid">
             <div className="thought-card">
-              <h3>Books</h3>
+              <h3>Books I'm Loving</h3>
               <ul>
                 <li><a href="https://www.amazon.com/How-Win-Friends-Influence-People/dp/0671027034" target="_blank" rel="noopener noreferrer">How to Win Friends and Influence People - Dale Carnegie</a></li>
                 <li><a href="https://www.amazon.com/Lean-Startup-Entrepreneurs-Continuous-Innovation/dp/0307887898" target="_blank" rel="noopener noreferrer">The Lean Startup - Eric Ries</a></li>
               </ul>
             </div>
             <div className="thought-card">
-              <h3>Websites</h3>
+              <h3>Websites I'm Using</h3>
               <ul>
                 <li><a href="https://www.drudgereport.com/" target="_blank" rel="noopener noreferrer">Drudge Report</a></li>
                 <li><a href="https://www.nytimes.com/" target="_blank" rel="noopener noreferrer">The New York Times</a></li>
