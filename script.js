@@ -795,66 +795,31 @@ document.addEventListener('DOMContentLoaded', () => {
     // ... existing DOMContentLoaded code ...
 });
 
-// Ensure loading screen is removed
-function hideLoadingScreen() {
+// Remove loading screen immediately
+(function() {
     const loadingContainer = document.querySelector('.loading-container');
     if (loadingContainer) {
-        loadingContainer.classList.add('hidden');
-        // Force remove after transition
-        setTimeout(() => {
-            loadingContainer.style.display = 'none';
-        }, 300);
+        loadingContainer.style.display = 'none';
     }
-}
+})();
 
-// Try to hide loading screen as early as possible
-document.addEventListener('DOMContentLoaded', hideLoadingScreen);
-window.addEventListener('load', hideLoadingScreen);
-
-// Backup timeout in case other events don't fire
-setTimeout(hideLoadingScreen, 2000);
-
-// Mobile menu functionality
+// Basic functionality
 document.addEventListener('DOMContentLoaded', () => {
+    // Mobile menu
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mobileMenu = document.querySelector('.mobile-menu');
-    const body = document.body;
-
+    
     if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener('click', () => {
-            mobileMenuBtn.classList.toggle('active');
             mobileMenu.classList.toggle('active');
-            body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-        });
-
-        document.addEventListener('click', (e) => {
-            if (mobileMenu.classList.contains('active') && 
-                !mobileMenu.contains(e.target) && 
-                !mobileMenuBtn.contains(e.target)) {
-                mobileMenuBtn.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                body.style.overflow = '';
-            }
         });
     }
 
     // Theme toggle
     const themeToggle = document.querySelector('.theme-toggle');
     if (themeToggle) {
-        const htmlElement = document.documentElement;
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-        
-        const applyTheme = (theme) => {
-            htmlElement.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
-        };
-
-        const savedTheme = localStorage.getItem('theme') || (prefersDark.matches ? 'dark' : 'light');
-        applyTheme(savedTheme);
-
         themeToggle.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+            document.documentElement.classList.toggle('dark');
         });
     }
 }); 

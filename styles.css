@@ -1,3 +1,4 @@
+/* Base Styles */
 :root {
     --primary-color: #003262;
     --secondary-color: #FDB515;
@@ -12,33 +13,74 @@
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Base Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: var(--font-sans);
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
     line-height: 1.6;
     color: var(--text-primary);
-    background-color: var(--background-light);
+    background: var(--background-light);
     min-height: 100vh;
-    transition: background-color var(--transition-speed) ease,
-                color var(--transition-speed) ease;
-    opacity: 1 !important;
-    visibility: visible !important;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+/* Loading (hidden by default) */
+.loading-container {
+    display: none;
+}
+
+/* Basic Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 1rem;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+}
+
+.mobile-menu.active {
     display: block;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+}
+
+/* Dark Mode */
+.dark {
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --background-light: #1a1a1a;
+    --background-dark: #111111;
 }
 
 /* Typography */
@@ -62,13 +104,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Layout */
-.container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 var(--spacing-unit);
-    width: 100%;
-}
-
 section {
     padding: 4rem var(--spacing-unit);
 }
@@ -134,23 +169,6 @@ section {
     transition: var(--transition-speed) ease;
 }
 
-.mobile-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: var(--background-light);
-    padding-top: 5rem;
-    transform: translateX(100%);
-    transition: transform var(--transition-speed) ease;
-}
-
-.mobile-menu.active {
-    transform: translateX(0);
-}
-
 /* Loading State */
 .loading-container {
     position: fixed;
@@ -196,47 +214,6 @@ section {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* Dark Mode */
-[data-theme="dark"] {
-    --primary-color: #4a9eff;
-    --secondary-color: #ffd700;
-    --text-primary: #e2e8f0;
-    --text-secondary: #94a3b8;
-    --background-light: #1a1a1a;
-    --background-dark: #111111;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .mobile-menu-btn {
-        display: block;
-    }
-
-    .mobile-menu {
-        display: block;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    section {
-        padding: 3rem var(--spacing-unit);
-    }
-
-    .container {
-        padding: 0 var(--spacing-unit);
-    }
-
-    .mega-text {
-        font-size: clamp(2rem, 5vw, 3rem);
-    }
-
-    .lead-text {
-        font-size: clamp(1rem, 2vw, 1.25rem);
-    }
 }
 
 /* Utility Classes */
