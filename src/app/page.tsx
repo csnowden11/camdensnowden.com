@@ -183,7 +183,7 @@ export default function Home() {
           />
         </div>
         <div className="overlay">
-          <h1>From the Long Gray Line to the Bottom Line™</h1>
+          <h1>From the Long Gray Line to the Bottom Line</h1>
           <h2>Decorated Army Officer Turning Business Leader</h2>
         </div>
       </section>
