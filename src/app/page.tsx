@@ -189,10 +189,10 @@ export default function Home() {
           </div>
           <div className="col-6">
             <p>
-              Hi, I&apos;m Camden Snowden—Colorado native, husband, father of Charlie and Everett, and West Point graduate (B.S. Economics, magna cum laude). After 12 years leading Army intelligence teams across two overseas tours and one operational deployment to Poland, I&apos;m channeling my strategic-intelligence expertise into venture and real-estate innovation while pursuing my MBA at Berkeley Haas.
+              Hi, I&apos;m Camden Snowden—Colorado native, husband, father of Charlie and Everett, and West Point graduate (B.S. Economics, magna cum laude). After 9 years of leading infantry and military intelligence organizations across two overseas tours and one operational deployment to Poland, I&apos;m channeling my strategic-intelligence expertise into venture and real-estate innovation while pursuing my MBA at Berkeley Haas.
             </p>
             <ul>
-              <li><strong>Years in service:</strong> 12</li>
+              <li><strong>Years in service:</strong> 9</li>
               <li><strong>Overseas tours:</strong> 2</li>
               <li><strong>Operational deployments:</strong> 1</li>
             </ul>
