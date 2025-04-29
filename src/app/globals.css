@@ -316,3 +316,73 @@ form button {
     max-height: 300px;
   }
 }
+
+/* Grid layouts */
+.thoughts-grid,
+.things-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.thought-card,
+.thing-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.thought-card h3,
+.thing-card h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.thought-card ul,
+.thing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.thought-card li,
+.thing-card li {
+  margin-bottom: 8px;
+}
+
+.thought-card a,
+.thing-card a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.thought-card a:hover,
+.thing-card a:hover {
+  text-decoration: underline;
+}
+
+.thing-card .btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .thoughts-grid,
+  .things-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .thought-card,
+  .thing-card {
+    padding: 16px;
+  }
+}

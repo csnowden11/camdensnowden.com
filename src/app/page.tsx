@@ -239,7 +239,7 @@ export default function Home() {
       {/* Outside of Work Section */}
       <section id="outside" className="container fade-in">
         <h2>Outside of Work</h2>
-        <p>Runner</p>
+        <p>Runner 🏃 – sourdough enthusiast 🍞 – devoted family man 👨‍👩‍👦‍👦 – mentor to transitioning veterans.</p>
       </section>
 
       {/* Thoughts Section */}
