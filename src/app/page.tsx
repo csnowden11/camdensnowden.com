@@ -261,7 +261,7 @@ export default function Home() {
             <div className="thought-card">
               <h3>Books</h3>
               <ul>
-                <li><a href="https://www.amazon.com/Pioneering-Portfolio-Management-David-Swensen/dp/0300168640" target="_blank" rel="noopener noreferrer">Pioneering Portfolio Management - David Swensen</a></li>
+                <li><a href="https://www.amazon.com/How-Win-Friends-Influence-People/dp/0671027034" target="_blank" rel="noopener noreferrer">How to Win Friends and Influence People - Dale Carnegie</a></li>
                 <li><a href="https://www.amazon.com/Lean-Startup-Entrepreneurs-Continuous-Innovation/dp/0307887898" target="_blank" rel="noopener noreferrer">The Lean Startup - Eric Ries</a></li>
               </ul>
             </div>

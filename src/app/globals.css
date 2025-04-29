@@ -245,12 +245,14 @@ nav {
   font-size: clamp(2rem, 5vw, 4rem);
   margin: 0 0 1rem;
   line-height: 1.2;
+  text-align: center;
 }
 
 #hero h2 {
   font-size: clamp(1.2rem, 3vw, 2rem);
   margin: 0 0 2rem;
   font-weight: 400;
+  text-align: center;
 }
 
 #hero .btn {
