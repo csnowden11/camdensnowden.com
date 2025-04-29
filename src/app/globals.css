@@ -564,10 +564,8 @@ img {
 
   /* Career section mobile */
   #career .col-6 img {
-    max-height: 250px;
-    margin-bottom: 16px;
-    width: 100%;
-    object-fit: cover;
+    max-height: 300px;
+    object-fit: contain;
   }
 
   #career ul {
@@ -676,5 +674,22 @@ footer p {
   
   .hero-subtitle {
     font-size: 1.5rem;
+  }
+}
+
+/* Career section images */
+#career .col-6 img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  #career .col-6 img {
+    max-height: 300px;
+    object-fit: contain;
   }
 }
