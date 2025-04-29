@@ -136,7 +136,7 @@ export default function Home() {
             src="/img/personal1_800.jpg"
             alt="Camden with family"
             width={1400}
-            height={800}
+            height={400}
             priority
             className="hero-image"
             style={{ transform: 'translateX(0%)', objectFit: 'cover' }}
@@ -145,7 +145,7 @@ export default function Home() {
             src="/img/personal2_800.jpg"
             alt="Camden on deployment"
             width={1400}
-            height={800}
+            height={400}
             priority
             className="hero-image"
             style={{ transform: 'translateX(100%)', objectFit: 'cover' }}
@@ -154,7 +154,7 @@ export default function Home() {
             src="/img/personal3_800.jpg"
             alt="Camden running"
             width={1400}
-            height={800}
+            height={400}
             priority
             className="hero-image"
             style={{ transform: 'translateX(200%)', objectFit: 'cover' }}
@@ -163,7 +163,7 @@ export default function Home() {
             src="/img/personal4_800.jpg"
             alt="Camden speaking at VC event"
             width={1400}
-            height={800}
+            height={400}
             priority
             className="hero-image"
             style={{ transform: 'translateX(300%)', objectFit: 'cover' }}
