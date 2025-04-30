@@ -256,7 +256,7 @@ export default function Home() {
       {/* Thoughts Section */}
       <section id="thoughts" className="alt fade-in">
         <div className="container">
-          <h2>Thoughts</h2>
+          <h2>Some of my Thoughts</h2>
           <div className="thoughts-grid">
             <div className="thought-card">
               <h3>Books I'm Loving</h3>
