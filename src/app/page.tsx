@@ -136,7 +136,6 @@ export default function Home() {
             <li><a href="#career" onClick={scrollToSection}>Career&nbsp;Timeline</a></li>
             <li><a href="#outside" onClick={scrollToSection}>Outside&nbsp;of&nbsp;Work</a></li>
             <li><a href="#thoughts" onClick={scrollToSection}>Thoughts</a></li>
-            <li><a href="#blog" onClick={scrollToSection}>Personal&nbsp;Blog</a></li>
             <li><a href="#contact" onClick={scrollToSection}>Contact</a></li>
           </ul>
         </nav>
@@ -279,20 +278,6 @@ export default function Home() {
                 <li><a href="https://www.chrishutchins.com/" target="_blank" rel="noopener noreferrer">All the Hacks</a></li>
                 <li><a href="https://www.churninglife.com/" target="_blank" rel="noopener noreferrer">Churning Life</a></li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Blog Section */}
-      <section id="blog" className="alt fade-in">
-        <div className="container">
-          <h2>Personal Blog</h2>
-          <div className="row">
-            <div className="col-4 post-card">
-              <h3>Life Lessons for My Sons <span className="date">29 Apr 2025</span></h3>
-              <p>Wisdom and guidance for Charlie and Everett's journey through life.</p>
-              <a href="/blog" className="btn">Read Article</a>
             </div>
           </div>
         </div>
