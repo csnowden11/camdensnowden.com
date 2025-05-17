@@ -201,7 +201,7 @@ export default function Home() {
           </div>
           <div className="col-6">
             <p>
-              Hi, I&apos;m Camden Snowden - Colorado native, married to Payson for nearly 8 years, father of Charlie and Everett, and West Point graduate (B.S. Economics, magna cum laude). After 9 years of leading infantry and military intelligence organizations across two overseas tours. I&apos;m channeling my expertise and pursuing my MBA at Berkeley Haas.
+              Hi, I&apos;m Camden Snowden - Colorado native, married to Payson for nearly 8 years, father of Charlie and Everett, and West Point graduate (B.S. Economics, magna cum laude). After years of leading infantry and military intelligence organizations across two overseas tours. I&apos;m channeling my expertise and pursuing my MBA at Berkeley Haas.
             </p>
             <ul>
               <li><strong>Years of Army service:</strong> 13</li>
@@ -217,13 +217,13 @@ export default function Home() {
           <div className="col-6">
             <h2>Career Highlights</h2>
             <ul>
-              <li><time dateTime="2016">2016</time> – Commissioned from West Point</li>
-              <li><time dateTime="2016">2016-2020</time> – Infantry Officer with 2CR</li>
-              <li><time dateTime="2020">2020-2022</time> – Military Intelligence Officer in South Korea</li>
-              <li><time dateTime="2022">2022-2024</time> – Multiple Company Commands, 280 Soldiers, $280 Million of equipment</li>
-              <li><time dateTime="2025">2025</time> – Goldman Sachs VIP Program</li>
-              <li><time dateTime="2025">2025</time> – Summer Associate, Context VC</li>
-              <li><time dateTime="2025">2025</time> – MBA Candidate, Berkeley Haas</li>
+              <li>Commissioned from West Point</li>
+              <li>Infantry Officer with 2CR</li>
+              <li>Military Intelligence Officer in South Korea</li>
+              <li>Multiple Company Commands, 280 Soldiers, $280 Million of equipment</li>
+              <li>Goldman Sachs VIP Program</li>
+              <li>Summer Associate, Context VC</li>
+              <li>MBA Candidate, Berkeley Haas</li>
             </ul>
             <p><strong>$250 Million in assets managed</strong>, <strong>0 losses</strong>. Trained <strong>thousands</strong> of soldiers.</p>
           </div>
